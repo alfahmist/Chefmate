@@ -645,8 +645,16 @@ video {
   margin-top: 0.5rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mr-10 {
+  margin-right: 2.5rem;
 }
 
 .block {
@@ -693,12 +701,40 @@ video {
   height: 100%;
 }
 
+.h-96 {
+  height: 24rem;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
+.h-12 {
+  height: 3rem;
+}
+
+.h-\[200px\] {
+  height: 200px;
+}
+
+.h-\[500\] {
+  height: 500;
+}
+
+.h-\[500px\] {
+  height: 500px;
+}
+
 .max-h-72 {
   max-height: 18rem;
 }
 
 .max-h-\[40px\] {
   max-height: 40px;
+}
+
+.min-h-48 {
+  min-height: 12rem;
 }
 
 .w-10 {
@@ -731,6 +767,18 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-9\/12 {
+  width: 75%;
+}
+
+.w-16 {
+  width: 4rem;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .max-w-\[40px\] {
@@ -799,6 +847,10 @@ video {
        column-gap: 1rem;
 }
 
+.self-center {
+  align-self: center;
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -829,6 +881,11 @@ video {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border-y-2 {
+  border-top-width: 2px;
+  border-bottom-width: 2px;
 }
 
 .border-l-0 {
@@ -948,6 +1005,11 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pb-20 {
@@ -1129,7 +1191,49 @@ video {
   outline-offset: 2px;
 }
 
+@media not all and (min-width: 768px) {
+  .max-md\:w-9\/12 {
+    width: 75%;
+  }
+
+  .max-md\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+@media not all and (min-width: 640px) {
+  .max-sm\:h-\[500px\] {
+    height: 500px;
+  }
+
+  .max-sm\:w-9\/12 {
+    width: 75%;
+  }
+
+  .max-sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
 @media (min-width: 640px) {
+  .sm\:mt-0 {
+    margin-top: 0px;
+  }
+
+  .sm\:w-full {
+    width: 100%;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:border-0 {
+    border-width: 0px;
+  }
+
   .sm\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -1142,6 +1246,14 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:mr-10 {
+    margin-right: 2.5rem;
+  }
+
+  .md\:mr-14 {
+    margin-right: 3.5rem;
+  }
+
   .md\:w-24 {
     width: 6rem;
   }
@@ -1152,6 +1264,10 @@ video {
 
   .md\:flex-row {
     flex-direction: row;
+  }
+
+  .md\:border-0 {
+    border-width: 0px;
   }
 
   .md\:text-2xl {
@@ -1170,6 +1286,10 @@ video {
     margin-bottom: 1rem;
   }
 
+  .lg\:mr-10 {
+    margin-right: 2.5rem;
+  }
+
   .lg\:max-h-\[482px\] {
     max-height: 482px;
   }
@@ -1184,6 +1304,10 @@ video {
 
   .lg\:gap-36 {
     gap: 9rem;
+  }
+
+  .lg\:gap-24 {
+    gap: 6rem;
   }
 
   .lg\:overflow-hidden {
