@@ -1,0 +1,147 @@
+* {
+  font-family: "poppins", sans-serif;
+}
+
+/* header-login */
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+header h1 {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+header nav ul {
+  list-style-type: none;
+}
+
+header nav ul li button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  padding-right: 4rem;
+}
+
+header nav ul li button:hover {
+  opacity: 80%;
+}
+/* login feature */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade {
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.active {
+  opacity: 0.5;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* display: none; */
+}
+
+.flexible {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.login {
+  width: 15rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+.login h2 {
+  font-size: 1.2rem;
+  font-style: semi-bold;
+}
+
+.login-span {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 80%;
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin: 0.5rem;
+}
+
+.login-span:hover {
+  opacity: 85%;
+}
+
+.login a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.close:hover {
+  opacity: 80%;
+}
+
+/* register button */
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register a {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid lime;
+  border-radius: 8px;
+  background-color: lime;
+  color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.register a:hover {
+  background-color: #84cc16;
+  border-color: #84cc16;
+}
+hr {
+  margin: 1rem 0;
+}
+
+@media (min-width: 1100px) {
+  .login {
+    width: 20rem;
+  }
+  .login h2 {
+    max-width: 85%;
+    font-size: 1rem;
+  }
+}
