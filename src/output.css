@@ -586,12 +586,24 @@ video {
   position: relative;
 }
 
+.left-0 {
+  left: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
 .right-4 {
   right: 1rem;
 }
 
 .top-4 {
   top: 1rem;
+}
+
+.top-\[-50px\] {
+  top: -50px;
 }
 
 .z-10 {
@@ -619,6 +631,10 @@ video {
 
 .mb-1 {
   margin-bottom: 0.25rem;
+}
+
+.mb-16 {
+  margin-bottom: 4rem;
 }
 
 .mb-2 {
@@ -679,6 +695,10 @@ video {
 
 .h-6 {
   height: 1.5rem;
+}
+
+.h-64 {
+  height: 16rem;
 }
 
 .h-7 {
@@ -745,6 +765,14 @@ video {
   width: 100%;
 }
 
+.max-w-52 {
+  max-width: 13rem;
+}
+
+.max-w-\[180px\] {
+  max-width: 180px;
+}
+
 .max-w-\[40px\] {
   max-width: 40px;
 }
@@ -765,6 +793,10 @@ video {
   flex-direction: column;
 }
 
+.items-end {
+  align-items: flex-end;
+}
+
 .items-center {
   align-items: center;
 }
@@ -777,6 +809,10 @@ video {
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -787,6 +823,10 @@ video {
 
 .gap-1 {
   gap: 0.25rem;
+}
+
+.gap-10 {
+  gap: 2.5rem;
 }
 
 .gap-2 {
@@ -823,6 +863,10 @@ video {
   overflow: hidden;
 }
 
+.overflow-x-scroll {
+  overflow-x: scroll;
+}
+
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -854,6 +898,11 @@ video {
 
 .border-l-0 {
   border-left-width: 0px;
+}
+
+.border-green-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(22 163 74 / var(--tw-border-opacity));
 }
 
 .border-orange-500 {
@@ -988,6 +1037,10 @@ video {
   padding-top: 2.5rem;
 }
 
+.pt-20 {
+  padding-top: 5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -1042,6 +1095,11 @@ video {
   text-transform: none;
 }
 
+.text-green-600 {
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
+}
+
 .text-orange-500 {
   --tw-text-opacity: 1;
   color: rgb(249 115 22 / var(--tw-text-opacity));
@@ -1084,6 +1142,21 @@ video {
 
 .duration-500 {
   transition-duration: 500ms;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .list-bahan {
