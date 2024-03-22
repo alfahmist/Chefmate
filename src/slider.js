@@ -5,6 +5,7 @@ var swiper = new Swiper(".mySwiper", {
     centeredSlides: true,
     pagination: {
         el: ".swiper-pagination",
+        bulletClass: "swiper-pagination-bullet",
         clickable: true,
     },
     navigation: {
