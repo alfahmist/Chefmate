@@ -10,73 +10,177 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <title>chefMate</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <header>
-      <h1>ini logo ceritanya</h1>
+  <body class="bg-[url('img/login-bg/body.jpg')] bg-cover">
+    <div class="container">
+      <!-- background -->
+      <div
+        id="kontainer"
+        class="p-2 font-alice grid grid-cols-2 gap-2 md:grid-cols-4 md:p-4"
+      >
+        <h2
+          class="h-15 text-xl font-semibold font-alice text-slate-800 md:col-start-4 md:row-start-2 md:flex hidden cursor-pointer hover:opacity-80 duration-300 ease-in-out"
+          id="loginButton"
+        >
+          <span class="capitalize self-center">login</span>
+        </h2>
+        <div
+          class="h-15 text-lg font-bold text-slate-600 md:col-start-2 md:row-start-2 md:flex hidden"
+        >
+          <span class="self-end">@ChefMate</span>
+        </div>
 
-      <!-- login navbar -->
-      <nav>
-        <ul>
-          <li><button type="button" id="loginButton">login</button></li>
-        </ul>
-      </nav>
-    </header>
+        <div
+          class="h-15 bg-blue-500 aspect-[4/3] rounded-xl md:aspect-[3/4] relative xl:aspect-[4/3] group overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer thumbs"
+        >
+          <div
+            class="bg-[url('img/login-bg/1.jpg')] w-full h-full bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500 group-hover:rotate-3"
+          ></div>
+        </div>
 
-    <!-- login -->
-    <div class="overlay" id="overlay">
-      <div class="flexible">
-        <div class="login popup" id="login">
-          <!-- close -->
-          <div class="close" id="close">
-            <img src="img/img-login/close.png" alt="close" width="20px" />
-          </div>
-          <h2>Masuk untuk menyimpan resep dan artikel favoritmu.</h2>
-          <!-- login with google -->
-          <a
-            href="https://accounts.google.com/gsi/select?client_id=640718146397-nn92djh35fodgudlsubnhn5n5p44o9n7.apps.googleusercontent.com&ux_mode=popup&ui_mode=card&as=Bywq5umLNCrx3z2h0IkgxQ&channel_id=a77fab25da60dc260b38bb4ee244f4a17937377b6e0a70bf221c7c94aa4e7234&origin=https%3A%2F%2Fwww.masakapahariini.com"
+        <div
+          class="h-15 bg-blue-500 aspect-[4/3] rounded-xl md:aspect-[3/4] relative xl:aspect-[4/3] group overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer md:col-start-3"
+        >
+          <div
+            class="bg-[url('img/login-bg/2.jpg')] w-full h-full bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500 group-hover:rotate-3"
+          ></div>
+        </div>
+
+        <div
+          class="h-15 bg-blue-500 aspect-[4/3] rounded-xl md:aspect-[3/4] relative xl:aspect-[4/3] group overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer"
+        >
+          <div
+            class="bg-[url('img/login-bg/3.jpg')] w-full h-full bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500 group-hover:rotate-3"
+          ></div>
+        </div>
+
+        <div
+          class="h-15 bg-blue-500 aspect-[4/3] rounded-xl md:aspect-[3/4] relative xl:aspect-[4/3] group overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer"
+        >
+          <div
+            class="bg-[url('img/login-bg/4.jpg')] w-full h-full bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500 group-hover:rotate-3"
+          ></div>
+        </div>
+
+        <div
+          class="h-15 bg-blue-500 aspect-[4/3] rounded-xl md:aspect-[3/4] relative xl:aspect-[4/3] group overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer"
+        >
+          <div
+            class="bg-[url('img/login-bg/5.jpg')] w-full h-full bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500 group-hover:rotate-3"
+          ></div>
+        </div>
+
+        <div
+          class="h-15 bg-blue-500 aspect-[4/3] rounded-xl md:aspect-[3/4] relative xl:aspect-[4/3] group overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer md:col-start-2"
+        >
+          <div
+            class="bg-[url('img/login-bg/6.jpg')] w-full h-full bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500 group-hover:rotate-3"
+          ></div>
+        </div>
+
+        <div
+          class="h-15 bg-blue-500 aspect-[4/3] rounded-xl md:aspect-[3/4] relative xl:aspect-[4/3] group overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer md:col-start-4"
+        >
+          <div
+            class="bg-[url('img/login-bg/7.jpg')] w-full h-full bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500 group-hover:rotate-3"
+          ></div>
+        </div>
+
+        <div
+          class="h-15 bg-blue-500 aspect-[4/3] rounded-xl md:aspect-[3/4] relative xl:aspect-[4/3] group overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer"
+        >
+          <div
+            class="bg-[url('img/login-bg/8.jpg')] w-full h-full bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500 group-hover:rotate-3"
+          ></div>
+        </div>
+
+        <div
+          class="h-15 bg-blue-500 aspect-[4/3] rounded-xl md:aspect-[3/4] relative xl:aspect-[4/3] group overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer md:col-start-3"
+        >
+          <div
+            class="bg-[url('img/login-bg/9.jpg')] w-full h-full bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500 group-hover:rotate-3"
+          ></div>
+        </div>
+
+        <div
+          class="h-15 bg-blue-500 aspect-[4/3] rounded-xl md:aspect-[3/4] relative xl:aspect-[4/3] group overflow-hidden hover:scale-95 transition-all duration-500 cursor-pointer md:col-start-3"
+        >
+          <div
+            class="bg-[url('img/login-bg/10.jpg')] w-full h-full bg-cover bg-center absolute group-hover:scale-125 transition-all duration-500 group-hover:rotate-3"
+          ></div>
+        </div>
+      </div>
+      <!-- login -->
+      <div
+        class="flex fixed top-0 right-0 left-0 bottom-0 w-auto h-auto bg-[rgba(0,0,0,0.3)]"
+        id="overlay"
+      >
+        <div class="flex flex-wrap justify-center items-center w-full h-full">
+          <div
+            class="bg-white p-4 rounded-[0.5rem] relative md:w-80"
+            id="login"
           >
-            <span class="login-span"
-              ><img
-                src="img/img-login/search.png"
-                alt="google"
-                width="20px"
-              />Login dengan google</span
+            <!-- close -->
+            <div
+              class="absolute top-[1rem] right-[1rem] cursor-pointer hover:opacity-80 duration-300 ease-in-out hidden md:inline-block"
+              id="close"
             >
-          </a>
-          <!-- login with facebook -->
-          <a
-            href="https://www.facebook.com/login/reauth.php?app_id=507585707489595&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv15.0%2Fdialog%2Foauth%3Fapp_id%3D507585707489595%26cbt%3D1709450695418%26channel_url%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df8a60e2f7a4b8ac52%2526domain%253Dwww.masakapahariini.com%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.masakapahariini.com%25252Ff88004eee50476ac1%2526relation%253Dopener%26client_id%3D507585707489595%26display%3Dpopup%26domain%3Dwww.masakapahariini.com%26e2e%3D%257B%257D%26fallback_redirect_uri%3Dhttps%253A%252F%252Fwww.masakapahariini.com%252F%26locale%3Den_US%26logger_id%3Dfb4bfe57420297914%26origin%3D1%26redirect_uri%3Dhttps%253A%252F%252Fstaticxx.facebook.com%252Fx%252Fconnect%252Fxd_arbiter%252F%253Fversion%253D46%2523cb%253Df114c93cd03e22b36%2526domain%253Dwww.masakapahariini.com%2526is_canvas%253Dfalse%2526origin%253Dhttps%25253A%25252F%25252Fwww.masakapahariini.com%25252Ff88004eee50476ac1%2526relation%253Dopener%2526frame%253Df7f5ae16ce787bb1a%26response_type%3Dtoken%252Csigned_request%252Cgraph_domain%26scope%3Dpublic_profile%252Cemail%26sdk%3Djoey%26version%3Dv15.0%26ret%3Dlogin%26fbapp_pres%3D0%26tp%3Dunspecified&cancel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df114c93cd03e22b36%26domain%3Dwww.masakapahariini.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.masakapahariini.com%252Ff88004eee50476ac1%26relation%3Dopener%26frame%3Df7f5ae16ce787bb1a%26error%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied&display=popup&locale=id_ID&pl_dbl=0"
-          >
-            <span class="login-span"
-              ><img
-                src="img/img-login/facebook.png"
-                alt="google"
-                width="20px"
-              />Login dengan facebook</span
+              <img src="img/login-icon/close.png" alt="close" width="20px" />
+            </div>
+            <h2
+              class="text-[1.2rem] font-semibold md:max-w-[85%] md:text-xl max-w-sm"
             >
-          </a>
-          <!-- login with email -->
-          <a href="#">
-            <span class="login-span"
-              ><img
-                src="img/img-login/user.png"
-                alt="google"
-                width="20px"
-              />Login dengan email</span
-            >
-          </a>
+              Masuk untuk menyimpan resep dan artikel favoritmu.
+            </h2>
+            <!-- login with google -->
+            <a href="#" class="font-medium">
+              <span
+                class="flex border border-[rgba(0,0,0,0.2)] w-[80%] rounded py-[0.4rem] px-[0.8rem] justify-between items-center cursor-pointer text-[0.8rem] m-2 hover:opacity-80 duration-300 ease-in-out"
+                ><img
+                  src="img/login-icon/search.png"
+                  alt="google"
+                  width="20px"
+                />Login dengan google</span
+              >
+            </a>
+            <!-- login with facebook -->
+            <a href="#" class="font-medium">
+              <span
+                class="flex border border-[rgba(0,0,0,0.2)] w-[80%] rounded py-[0.4rem] px-[0.8rem] justify-between items-center cursor-pointer text-[0.8rem] m-2 hover:opacity-80 duration-300 ease-in-out"
+                ><img
+                  src="img/login-icon/facebook.png"
+                  alt="google"
+                  width="20px"
+                />Login dengan facebook</span
+              >
+            </a>
+            <!-- login with email -->
+            <a href="#" class="font-medium">
+              <span
+                class="flex border border-[rgba(0,0,0,0.2)] w-[80%] rounded py-[0.4rem] px-[0.8rem] justify-between items-center cursor-pointer text-[0.8rem] m-2 hover:opacity-80 duration-300 ease-in-out"
+                ><img
+                  src="img/login-icon/user.png"
+                  alt="google"
+                  width="20px"
+                />Login dengan email</span
+              >
+            </a>
 
-          <hr />
-          <!-- register button -->
-          <div class="register">
-            <a href="#">register</a>
+            <hr class="my-4" />
+            <!-- register button -->
+            <div class="flex justify-center items-center">
+              <a
+                href="#"
+                class="font-medium inline-block mx-auto py-[0.2rem] px-[0.5rem] border border-[#00ff00] rounded-[8px] bg-[#00ff00] text-white duration-300 ease-in-out hover:bg-[#84cc16] hover:border-[#84cc16]"
+                >register</a
+              >
+            </div>
           </div>
         </div>
       </div>
+      <script src="script.js"></script>
     </div>
-    <script src="script.js"></script>
   </body>
 </html>
