@@ -779,6 +779,10 @@ video {
   height: 0.75rem;
 }
 
+.h-48 {
+  height: 12rem;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -871,6 +875,10 @@ video {
   width: 100%;
 }
 
+.w-1\/4 {
+  width: 25%;
+}
+
 .max-w-\[40px\] {
   max-width: 40px;
 }
@@ -881,6 +889,17 @@ video {
 
 .flex-1 {
   flex: 1 1 0%;
+}
+
+.translate-y-8 {
+  --tw-translate-y: 2rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.scale-\[1\.5\] {
+  --tw-scale-x: 1.5;
+  --tw-scale-y: 1.5;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .cursor-pointer {
@@ -1165,12 +1184,32 @@ video {
   background-image: url('img/login-bg/body.jpg');
 }
 
+.bg-article-1 {
+  background-image: url('./img/makanan-artikel.jpg');
+}
+
+.bg-article-2 {
+  background-image: url('./img/roasted-chicken.jpg');
+}
+
+.bg-article-3 {
+  background-image: url('./img/ayam-goreng.jpg');
+}
+
+.bg-article-4 {
+  background-image: url('./img/mie-goreng-telur.jpg');
+}
+
 .bg-cover {
   background-size: cover;
 }
 
 .bg-center {
   background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .fill-current {
@@ -1447,6 +1486,12 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
+.hover\:scale-\[1\.75\]:hover {
+  --tw-scale-x: 1.75;
+  --tw-scale-y: 1.75;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
 .hover\:border-\[\#84cc16\]:hover {
   --tw-border-opacity: 1;
   border-color: rgb(132 204 22 / var(--tw-border-opacity));
@@ -1671,6 +1716,10 @@ video {
 
   .lg\:w-\[680px\] {
     width: 680px;
+  }
+
+  .lg\:w-1\/4 {
+    width: 25%;
   }
 
   .lg\:flex-row {
