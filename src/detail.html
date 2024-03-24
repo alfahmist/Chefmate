@@ -87,6 +87,29 @@
         <!-- end section pembuat -->
 
         <!-- start section favorite -->
+        <section id="favorite">
+          <div class="container">
+            <div class="mb-2 p-4 md:hidden lg:mb-4 lg:rounded-lg lg:shadow-lg">
+              <button
+                class="mb-2 w-36 rounded-lg border border-orange-700 bg-transparent px-10 py-2 font-semibold text-orange-700 shadow-md"
+              >
+                Favorite
+              </button>
+              <br />
+              <button
+                class="h-15 far fa-share-square mb-2 w-36 rounded-lg border border-black bg-transparent px-10 py-2 font-semibold text-slate-950 shadow-md"
+              >
+                Bagikan
+              </button>
+              <br />
+              <button
+                class="h-15 mb-2 w-36 rounded-lg border border-black bg-transparent px-10 py-2 font-semibold text-slate-950 shadow-md"
+              >
+                Print
+              </button>
+            </div>
+          </div>
+        </section>
         <!-- mas canro jangan lupa kerjain ya -->
         <!-- end section favorite -->
 
@@ -525,10 +548,124 @@
         <!-- end section reaksi -->
 
         <!-- start section cooksnap -->
+        <section id="cooksnap">
+          <div class="container">
+            <div
+              class="mb-2 flex flex-col p-4 lg:mb-4 lg:rounded-lg lg:shadow-lg"
+            >
+              <h2 class="mb-4 text-lg font-semibold text-slate-700">
+                Cooksnap(3)
+              </h2>
+              <div class="flex">
+                <div class="flex flex-col">
+                  <div
+                    class="mb-2 flex flex-col p-4 lg:mb-4 lg:rounded-lg lg:shadow-lg"
+                  >
+                    <img
+                      class="h-[120px] w-[120px] rounded-lg object-cover"
+                      src="/Chefmate/src/img/icon/bubur.webp"
+                      alt="8"
+                    />
+                    <div class="flex">
+                      <img
+                        class="mr-2 mt-2 h-[30px] w-[30px] rounded-full"
+                        src="/Chefmate/src/img/icon/photo.webp"
+                        alt="icon"
+                      />
+                      <span class="mt-3 text-sm font-semibold"
+                        >Annisa Rahim</span
+                      >
+                    </div>
+                    <p class="mt-2 text-sm font-light">Enak ada Wanginya</p>
+                  </div>
+                </div>
+                <div
+                  class="mb-2 flex flex-col p-4 lg:mb-4 lg:rounded-lg lg:shadow-lg"
+                >
+                  <img
+                    class="h-[120px] w-[120px] rounded-lg object-cover"
+                    src="/src/img/cooksnap/santan.webp"
+                    alt="9"
+                  />
+                  <div class="flex">
+                    <img
+                      class="mr-2 mt-2 h-[30px] w-[30px] rounded-full"
+                      src="/src/img/stepbystep/7.webp"
+                      alt="icon"
+                    />
+                    <span class="mt-3 text-sm font-semibold">Anton Budi</span>
+                  </div>
+                  <p class="mt-2 text-sm font-light">Mantap</p>
+                </div>
+                <div
+                  class="mb-2 flex flex-col p-4 lg:mb-4 lg:rounded-lg lg:shadow-lg"
+                >
+                  <img
+                    class="h-[120px] w-[120px] rounded-lg object-cover"
+                    src="/src/img/cooksnap/santan2.webp"
+                    alt="10"
+                  />
+                  <div class="flex">
+                    <img
+                      class="mt-2 h-[30px] w-[30px] rounded-full"
+                      src="/src/img/donat aing.png"
+                      alt="profil"
+                    /><span class="ml-2 mt-3 text-sm font-semibold">Nadeo</span>
+                  </div>
+                  <p class="mt-2 text-sm font-extralight">Lumayan lah</p>
+                </div>
+              </div>
+              <button
+                class="h-15 mb-2 w-60 justify-normal rounded-lg border-black bg-gray-900 px-10 py-2 font-semibold text-gray-200 shadow-md"
+              >
+                Kirim Foto Cooksnap
+              </button>
+
+              <a href="#" class="justify-center underline"
+                >selengkapnya mengenai cooksnap</a
+              >
+            </div>
+          </div>
+        </section>
         <!-- mas canro jangan lupa kerjain ya -->
         <!-- end section cooksnap -->
 
         <!-- start section komentar -->
+        <section id="Komentar">
+          <div class="Container">
+            <div
+              class="mb-2 flex flex-col p-4 lg:mb-4 lg:rounded-lg lg:shadow-lg"
+            >
+              <div class="flex">
+                <img
+                  class="mr-5 h-[30px] w-[30px]"
+                  src="/Chefmate/src/img/icon/comment.svg"
+                  alt="logo"
+                />
+                <br />
+                <h1 class="mb-4 text-lg font-semibold text-slate-700">
+                  Komentar
+                </h1>
+              </div>
+              <form action="Tulis Komentar">
+                <textarea
+                  class="w-full resize-none rounded-full border border-black focus:outline-none"
+                  name="Tulis Komentar"
+                  id="Komentar"
+                  cols="30"
+                  rows="1"
+                  placeholder="  Beri Komentar"
+                ></textarea>
+                <button
+                  id="Komentar"
+                  class="mt-3 h-[30px] w-[50px] rounded bg-slate-700 text-white"
+                >
+                  Kirim
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
         <!-- mas canro jangan lupa kerjain ya -->
         <!-- end section komentar -->
 
@@ -592,8 +729,30 @@
       </div>
       <!-- end content -->
 
-      <aside>
-        <!-- sama bagian pinggirnya mas canro  -->
+      <aside class="w-[300px]">
+        <div class="container">
+          <div
+            class="mb-2 hidden p-4 md:block lg:mb-4 lg:rounded-lg lg:shadow-lg"
+          >
+            <button
+              class="mb-2 w-full rounded-lg border border-orange-500 bg-transparent px-10 py-2 font-semibold text-orange-500 shadow-md"
+            >
+              Favorite
+            </button>
+            <br />
+            <button
+              class="h-15 far fa-share-square mb-2 w-full rounded-lg border border-black bg-transparent px-10 py-2 font-semibold text-slate-950 shadow-md"
+            >
+              Bagikan
+            </button>
+            <br />
+            <button
+              class="h-15 mb-2 w-full rounded-lg border border-black bg-transparent px-10 py-2 font-semibold text-slate-950 shadow-md"
+            >
+              Print
+            </button>
+          </div>
+        </div>
       </aside>
     </main>
 
