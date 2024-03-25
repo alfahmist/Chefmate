@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Resep</title>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body>
+    <main class="bg-bgdetailbase">
+      <!-- Contact Section Start -->
+      <section id="contact" class="pt-36 pb-32">
+        <div class="container">
+          <div class="w-full px-4">
+            <div class="max-w-xl mx-auto text-center mb-16">
+              <div class="bg-cookpad-gray-200">
+                <div class="py-rg md:py-lg image-upload text-center">
+                  <div class="text-cookpad-gray-600">
+                    <img
+                      class="w-28 mx-auto"
+                      src="./img/resep/camera2.png"
+                    />
+
+                    <p class="text-cookpad-20 font-semibold mt-md">
+                      Tambahkan foto resep
+                    </p>
+
+                    <p class="text-cookpad-14">
+                      Tunjukkan foto hasil akhir masakanmu
+                    </p>
+                  </div>
+                  <input
+                    type="file"
+                    name="file"
+                    aria-label="Tambahkan foto resep"
+                    accept="image/*"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- Hamburger Start section -->
+          <section>
+          <form>
+            <div class="max-w-xl mx-auto mb-16 shadow-lg bg-white lg:rounded-lg p-4">
+                <textarea
+                  placeholder="Masukkan Judul Masakan Anda"
+                  type="text"
+                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"
+                ></textarea>
+            </div>
+
+            <div class="max-w-xl mx-auto mb-16 shadow-lg bg-white lg:rounded-lg p-4">
+            <div class="w-full lg:mx-auto">
+              <div class="w-full px-4 mb-8">
+                <label for="name" class="text-base font-bold text-primary"
+                  >Porsi</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
+                />
+              </div>
+              <div class="w-full px-4 mb-8">
+                <label for="email" class="text-base font-bold text-primary"
+                  >Lama memasak</label
+                >
+                <input
+                  type="text"
+                  id="email"
+                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"
+                />
+              </div>
+              <div class="w-full px-4 mb-8">
+                <textarea
+                  placeholder="Ceritakan apa inspirasi anda untuk memasakan masakan tersebut, dan sebuatkan dari mana inspirasi anda tersebut"
+                  type="text"
+                  id="email"
+                  class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"
+                ></textarea>
+              </div>
+            </div>
+        </div>
+          </form>
+      </section>
+      <!-- Hamburger End section -->
+
+      <!-- Start bahan Section -->
+      <section>
+        <div class="container">
+          <div class="p-2 w-full">
+            <div
+              class="max-w-xl mx-auto mb-16 shadow-lg bg-white lg:rounded-lg p-4"
+            >
+              <h2 class="font-semibold text-lg mb-2 text-primary">
+                Bahan-Bahan
+              </h2>
+
+              <ul>
+                <li>
+                  <input
+                    type="text"
+                    name="bahan-bahan"
+                    placeholder="1/2 ekor ayam"
+                    class="resep-list"
+                  />
+                </li>
+                <li>
+                  <input
+                    type="text"
+                    name="bahan-bahan"
+                    placeholder="2 buah wortel"
+                    class="resep-list"
+                  />
+                </li>
+                <li>
+                  <input
+                    type="text"
+                    name="bahan-bahan"
+                    placeholder="1/2 ekor ayam"
+                    class="resep-list"
+                  />
+                </li>
+                <li>
+                  <input
+                    type="text"
+                    name="bahan-bahan"
+                    placeholder="Grup"
+                    class="resep-list"
+                  />
+                </li>
+                <li>
+                  <input
+                    type="text"
+                    name="bahan-bahan"
+                    placeholder="1/2 ekor ayam"
+                    class="resep-list"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end bahan Section -->
+
+      <!-- start langkah section -->
+      <section>
+        <div class="container">
+          <div class="p-4 w-full">
+            <div
+              class="max-w-xl mx-auto mb-16 shadow-lg bg-white lg:rounded-lg p-4"
+            >
+              <h2 class="font-semibold text-lg mb-2 text-primary">Langkah</h2>
+              <ul>
+                <li>
+                  <div class="flex items-center">
+                    <div class="mr-2">
+                      <div
+                        class="bg-primary w-6 rounded-full text-center text-white"
+                      >
+                        1
+                      </div>
+                    </div>
+                    <input
+                      type="text"
+                      name="bahan-bahan"
+                      placeholder="Langkah 1"
+                      class="resep-list"
+                    />
+                  </div>
+                  <div class="w-32 h-28 p-2">
+                    <div class="w-full h-full bg-slate-200 rounded-lg">
+                      <img src="./img/resep/camera.png" class="w-28 mx-auto" />
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="flex items-center">
+                    <div class="mr-2">
+                      <div
+                        class="bg-primary w-6 rounded-full text-center text-white"
+                      >
+                        2
+                      </div>
+                    </div>
+
+                    <input
+                      type="text"
+                      name="bahan-bahan"
+                      placeholder="langkah 2"
+                      class="resep-list"
+                    />
+                  </div>
+                  <div class="w-32 h-28 p-2">
+                    <div class="w-full h-full bg-slate-200 rounded-lg">
+                        <img src="./img/resep/camera.png" class="w-28 mx-auto">
+                    </div>
+                  </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <div class="mr-2">
+                          <div
+                            class="bg-primary w-6 rounded-full text-center text-white"
+                          >
+                            3
+                          </div>
+                        </div>
+                  <input
+                    type="text"
+                    name="bahan-bahan"
+                    placeholder="langkah 3"
+                    class="resep-list"
+                  />
+                </div>
+                <div class="w-32 h-28 p-2">
+                  <div class="w-full h-full bg-slate-200 rounded-lg">
+                      <img src="./img/resep/camera.png" class="w-28 mx-auto">
+                  </div>
+                </div>
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <div class="mr-2">
+                          <div
+                            class="bg-primary w-6 rounded-full text-center text-white"
+                          >
+                            4
+                          </div>
+                        </div>
+                  <input
+                    type="text"
+                    name="bahan-bahan"
+                    placeholder="Grup"
+                    class="resep-list"
+                  />
+                </li>
+                <li>
+                    <div class="flex items-center">
+                        <div class="mr-2">
+                          <div
+                            class="bg-primary w-6 rounded-full text-center text-white"
+                          >
+                            5
+                          </div>
+                        </div>
+                  <input
+                    type="text"
+                    name="bahan-bahan"
+                    placeholder="Tambahan"
+                    class="resep-list"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end langkah section -->
+    </main>
+  </body>
+</html>
