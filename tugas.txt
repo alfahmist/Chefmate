@@ -1,0 +1,7 @@
+Header, Footer = Gusti Alfahmi Anwar
+Login = Mochammad Imam Fachrie
+Register = Jody Septa Winata
+Home = Gusti Alfahmi Anwar, Rizki Fachrizal
+Detail = Muhammad Sadam Mahendra, Canro Sigalingging
+Create Recipe = Candra Eriansyah, Rafi Darmawan
+Favorit = Ahmad Haikal Ihsan
