@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 // import { useParams } from "react-router-dom"
-import data from "./data.json";
+import data from "./data";
 
 import Judul from "./components/Judul";
 import Pembuka from "./components/Pembuka";
