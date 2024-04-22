@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
 // import { useParams } from "react-router-dom"
+import TimerIcon from "../../assets/icons/clock.svg";
+import PersonIcon from "../../assets/icons/person.svg";
+
 import MainLayout from "../../layout/MainLayout";
 
 import data from "./data";
@@ -40,7 +43,7 @@ const Detail = () => {
                     <div className="flex items-center gap-x-2">
                       <img
                         className="h-[16px] w-[16px]"
-                        src="img/icon/clock.png"
+                        src={TimerIcon}
                         alt="waktu"
                       />
                       <span>{dataDetail.waktu}</span>
@@ -48,7 +51,7 @@ const Detail = () => {
                     <div className="flex items-center gap-x-2">
                       <img
                         className="h-[16px] w-[16px]"
-                        src="img/icon/person.png"
+                        src={PersonIcon}
                         alt="orang"
                       />
                       <span>{dataDetail.porsi}</span>

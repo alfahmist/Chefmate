@@ -1,3 +1,6 @@
+import LocationIcon from "../../../assets/icons/location.svg";
+import PersonImg from "../../../assets/img/person_dummy.jpg";
+
 const Pembuka = () => {
   return (
     <section id="Pembuka">
@@ -8,23 +11,23 @@ const Pembuka = () => {
             <a href="#" className="flex items-center gap-x-2">
               <img
                 className="max-h-[40px] max-w-[40px] rounded-full"
-                src="img/unnamed.png"
+                src={PersonImg}
                 alt="pembuat"
               />
               <div>
                 {/* <!-- nama pembuat --> */}
                 <div>
-                  <span className="text-base font-semibold">sadam</span>
+                  <span className="text-base font-semibold mr-1">sadam</span>
                   <span className="text-sm text-slate-600">@sadammahendra</span>
                 </div>
                 {/* <!-- location --> */}
                 <div className="flex items-center text-sm text-slate-600">
                   <img
                     className="h-[16px] w-[16px]"
-                    src="img/icon/location.png"
+                    src={LocationIcon}
                     alt="lokasi"
                   />
-                  <span>jakarta Selatan</span>
+                  <span className="ml-2">jakarta Selatan</span>
                 </div>
               </div>
             </a>

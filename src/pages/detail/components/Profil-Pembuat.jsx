@@ -1,3 +1,6 @@
+import LocationIcon from "../../../assets/icons/location.svg";
+import PersonImg from "../../../assets/img/person_dummy.jpg";
+
 const ProfilPembuat = () => {
   return (
     <section id="profil-pembuat">
@@ -12,7 +15,7 @@ const ProfilPembuat = () => {
               <a href="#">
                 <img
                   className="w-14 rounded-full md:w-24"
-                  src="img/unnamed.png"
+                  src={PersonImg}
                   alt="profil author"
                 />
               </a>
@@ -20,7 +23,7 @@ const ProfilPembuat = () => {
               <div>
                 {/* <!-- nama pembuat --> */}
                 <div>
-                  <span className="text-base font-semibold">sadam</span>
+                  <span className="text-base font-semibold mr-1">sadam</span>
                   <span className="text-sm text-slate-600">@sadammahendra</span>
                 </div>
                 {/* <!-- dibuat pada tanggal --> */}
@@ -29,10 +32,10 @@ const ProfilPembuat = () => {
                 <div className="flex items-center text-sm text-slate-600">
                   <img
                     className="h-[16px] w-[16px]"
-                    src="img/icon/location.png"
+                    src={LocationIcon}
                     alt="lokasi"
                   />
-                  <span>jakarta Selatan</span>
+                  <span className="ml-2">jakarta Selatan</span>
                 </div>
                 {/* <!-- tombol ikuti --> */}
                 <div className="mt-2">
