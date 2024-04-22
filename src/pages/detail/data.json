@@ -1,0 +1,32 @@
+[
+  {
+    "nama-resep": "Siyao Kai / Ayam Kecap ala Hongkong",
+    "detail": {
+      "cara-membuat": [
+        { "judul": "Aduk semua bahan saus jadi satu sampai larut.", "img": "" },
+        {
+          "judul": "Iris tipis bawang putih, bawang merah dan jahe. Untuk daun bawang potong kasar saja.",
+          "img": ""
+        },
+        {
+          "judul": "Letakkan ayam yang sudah di cuci bersih kedalam wajan. Taburi diatasnya dengan bawang putih, bawang merah dan daun bawang.",
+          "img": ""
+        },
+        {
+          "judul": "Tuang larutan saus merata diatas ayam. Nyalakan api sedang cenderung kecil. Tutup wajannya.",
+          "img": ""
+        },
+        {
+          "judul": "Masak sambil dibolak balik agar bumbu meresap dan warnanya cantik. Sampai sausnya menyusut.",
+          "img": ""
+        },
+        { "judul": "Angkat ayam dan potong-potong", "img": "" },
+        {
+          "judul": "Haluskan semua bahan sambal menggunakan blender. Pindahkan kemangkok saus.",
+          "img": ""
+        },
+        { "judul": "Sajikan hangat bersama sambalnya.", "img": "" }
+      ]
+    }
+  }
+]
