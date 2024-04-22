@@ -1,15 +1,18 @@
-import step1 from "../../assets/detail/step/1.webp";
-import step2 from "../../assets/detail/step/2.webp";
-import step3 from "../../assets/detail/step/3.webp";
-import step4 from "../../assets/detail/step/4.webp";
-import step5 from "../../assets/detail/step/5.webp";
-import step6 from "../../assets/detail/step/6.webp";
-import step7 from "../../assets/detail/step/7.webp";
-import step8 from "../../assets/detail/step/8.webp";
+import imgResep from "../../assets/img/ayam.jpg";
+
+import step1 from "../../assets/img/detail/step/1.webp";
+import step2 from "../../assets/img/detail/step/2.webp";
+import step3 from "../../assets/img/detail/step/3.webp";
+import step4 from "../../assets/img/detail/step/4.webp";
+import step5 from "../../assets/img/detail/step/5.webp";
+import step6 from "../../assets/img/detail/step/6.webp";
+import step7 from "../../assets/img/detail/step/7.webp";
+import step8 from "../../assets/img/detail/step/8.webp";
 
 const data = [
   {
     "nama-resep": "Siyao Kai / Ayam Kecap ala Hongkong",
+    "img-resep": imgResep,
     waktu: "30 menit",
     porsi: "6 orang",
     "bahan-bahan": [

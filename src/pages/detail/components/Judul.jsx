@@ -5,7 +5,7 @@ const Judul = ({ data }) => {
       <div className="lg:container">
         <img
           className="max-h-72 w-full object-cover lg:my-4 lg:max-h-[482px] lg:w-[680px] lg:overflow-hidden lg:rounded-lg lg:shadow"
-          src="img/ayam.jpg"
+          src={data["img-resep"]}
           alt="donat"
         />
 
