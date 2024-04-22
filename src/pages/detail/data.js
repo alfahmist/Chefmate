@@ -26,8 +26,7 @@ const data = [
         ],
       },
       {
-        judul: "saus",
-        "bahan-baku": [
+        saus: [
           { jumlah: "2 sdm", "nama-bahan": "kecap manis" },
           { jumlah: "2 sdm", "nama-bahan": "kecap asin" },
           { jumlah: "1 1/3 sdm", "nama-bahan": "saus tiram" },
@@ -40,8 +39,7 @@ const data = [
         ],
       },
       {
-        judul: "sambal",
-        "bahan-baku": [
+        sambal: [
           { jumlah: "50-75 ml", "nama-bahan": "air" },
           { jumlah: "3 buah", "nama-bahan": "cabe rawit" },
           { jumlah: "1/4", "nama-bahan": "buah tomat" },
@@ -54,7 +52,6 @@ const data = [
           { jumlah: "1/4 sdt", "nama-bahan": "garam" },
         ],
       },
-      {},
     ],
     detail: {
       "cara-membuat": [

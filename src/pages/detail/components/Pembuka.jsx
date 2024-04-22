@@ -43,7 +43,7 @@ const Pembuka = () => {
               Fyi, saya recook dari mas canro dan saya hanya bikin 2/3 dari
               resep asli.
             </p>
-            <p className="mb-2 text-primary">
+            <p className="mb-2 text-[#f97316]">
               <a href="#" className="block">
                 #godainramsay_ayamstrong
               </a>
