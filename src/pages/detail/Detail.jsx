@@ -21,7 +21,7 @@ const Detail = () => {
 
   return (
     <MainLayout>
-      <main className="lg:flex justify-center bg-bgdetailbase">
+      <main className="lg:flex justify-center bg-[#f8f6f2]">
         <div className="lg:flex lg:px-4 lg:max-w-[1020px] justify-center">
           {/* start content */}
           <div id="content" className="lg:w-3/5 flex-shrink-0 flex-grow">
