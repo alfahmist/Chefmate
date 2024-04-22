@@ -25,8 +25,8 @@ const StepMasakan = ({ data }) => {
                       <a href="#">
                         <img
                           className="h-[128px] w-[160px] rounded-lg object-cover"
-                          src="img/stepbystep/1.webp"
-                          alt="1"
+                          src={item.img}
+                          alt={index + 1}
                         />
                       </a>
                     </div>
