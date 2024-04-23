@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import MainLayout from '../../layout/MainLayout';
 import Card from './Card';
 import { Slider } from './Slider';
@@ -11,9 +12,15 @@ function index() {
 						Resep Terbaru
 					</h1>
 					<div className='flex flex-col gap-8 mb-8 lg:flex-row justify-center'>
-						<Card image={'src/assets/img/ayam.jpg'} />
-						<Card image={'src/assets/img/ayam.jpg'} />
-						<Card image={'src/assets/img/ayam.jpg'} />
+						<Link to={'/detail/1'}>
+							<Card image={'src/assets/img/ayam.jpg'} />
+						</Link>
+						<Link to={'/detail/1'}>
+							<Card image={'src/assets/img/ayam.jpg'} />
+						</Link>
+						<Link to={'/detail/1'}>
+							<Card image={'src/assets/img/ayam.jpg'} />
+						</Link>
 					</div>
 					<a
 						href='#'
@@ -29,10 +36,18 @@ function index() {
 						Artikel Terbaru
 					</h1>
 					<div className='flex flex-col gap-8 mb-8 lg:flex-row'>
-						<Card image={'src/assets/img/ayam.jpg'} />
-						<Card image={'src/assets/img/ayam.jpg'} />
-						<Card image={'src/assets/img/ayam.jpg'} />
-						<Card image={'src/assets/img/ayam.jpg'} />
+						<Link to={'/detail/1'}>
+							<Card image={'src/assets/img/ayam.jpg'} />
+						</Link>
+						<Link to={'/detail/1'}>
+							<Card image={'src/assets/img/ayam.jpg'} />
+						</Link>
+						<Link to={'/detail/1'}>
+							<Card image={'src/assets/img/ayam.jpg'} />
+						</Link>
+						<Link to={'/detail/1'}>
+							<Card image={'src/assets/img/ayam.jpg'} />
+						</Link>
 					</div>
 					<a
 						href='#'
