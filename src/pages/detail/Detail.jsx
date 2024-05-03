@@ -6,9 +6,13 @@ import data from "./data";
 
 import Judul from "./components/Judul";
 import Pembuka from "./components/Pembuka";
+import Favorite from "./components/Favorite";
 import Bahan from "./components/Bahan";
 import StepMasakan from "./components/StepMasakan";
+import Cooksnap from "./components/Cooksnap";
+import Komentar from "./components/Komentar";
 import Reaksi from "./components/Reaksi";
+import Aside from "./components/Aside";
 import ProfilPembuat from "./components/Profil-Pembuat";
 
 const Detail = () => {
@@ -28,8 +32,8 @@ const Detail = () => {
             <Judul data={dataDetail} />
             <Pembuka />
 
-            {/* bagian mas canro */}
-            <section id="favorite"></section>
+            {/* bagian canro */}
+            <Favorite />
 
             <Bahan
               data={dataDetail}
@@ -43,12 +47,12 @@ const Detail = () => {
 
             {/* bagian mas canro */}
             {/* start section cooksnap */}
-            <section id="cooksnap"></section>
+            <Cooksnap />
             {/* end section cooksnap */}
 
             {/* bagian mas canro */}
             {/* start section komentar */}
-            <section id="Komentar"></section>
+            <Komentar />
             {/* end section komentar */}
 
             <ProfilPembuat />
@@ -56,7 +60,7 @@ const Detail = () => {
           {/* end content */}
 
           {/* bagian mas canro */}
-          <aside className="w-[292px] hidden lg:block ml-6"></aside>
+          <Aside className="w-[292px] hidden lg:block ml-6" />
         </div>
       </main>
     </MainLayout>
