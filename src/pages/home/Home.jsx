@@ -41,6 +41,163 @@ function index() {
 	return (
 		<MainLayout>
 			<main className='bg-slate-100'>
+				<section
+					className='hero bg-cover bg-center'
+					// style='background-image: url(./Images/pindang/bandeng.jpg);'
+				>
+					<div class='max-w-full mx-auto px-4 py-20 text-center bg-gradient-to-br from-gray-800 to-gray-0'>
+						<h1 class='text-4xl md:text-6xl font-bold text-white mb-4'>
+							Pindang Bandeng Kuah Asam Manis
+						</h1>
+						<p class='text-lg md:text-xl text-white mb-8'>
+							Resep Sajian sehat untuk keluarga besar.
+						</p>
+						<a
+							href='#'
+							class='bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full inline-block'
+						>
+							Cek Resep
+						</a>
+					</div>
+				</section>
+
+				<section class='container mx-auto w-4/5'>
+					<h2 class='text-2xl font-semibold text-center mb-4'>
+						Telusuri Berdasarkan
+					</h2>
+					<div class='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4'>
+						<div class='bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-center items-center'>
+							<img
+								src='./Images/Dessert.jpg'
+								alt='Placeholder'
+								class='w-full'
+							/>
+							<div class='p-4 '>
+								<p class='text-gray-800 text-lg text-center'>Dessert</p>
+							</div>
+						</div>
+						<div class='bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-center items-center'>
+							<img
+								src='./Images/Menu Hari raya.jpg'
+								alt='Placeholder'
+								class='w-full'
+							/>
+							<div class='p-4 '>
+								<p class='text-gray-800 text-lg text-center'>
+									Masakan Hari raya
+								</p>
+							</div>
+						</div>
+						<div class='bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-center items-center'>
+							<img
+								src='./Images/Masakan Tradisional.jpg'
+								alt='Placeholder'
+								class='w-full'
+							/>
+							<div class='p-4 '>
+								<p class='text-gray-800 text-lg text-center'>
+									Masakan Tradisional
+								</p>
+							</div>
+						</div>
+						<div class='bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-center items-center'>
+							<img
+								src='./Images/Makan Malam.jpg'
+								alt='Placeholder'
+								class='w-full'
+							/>
+							<div class='p-4 '>
+								<p class='text-gray-800 text-lg text-center'>
+									Menu Makan malam
+								</p>
+							</div>
+						</div>
+						<div class='bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-center items-center'>
+							<img
+								src='./Images/makan siang.jpg'
+								alt='Placeholder'
+								class='w-full'
+							/>
+							<div class='p-4 '>
+								<p class='text-gray-800 text-lg text-center'>
+									Menu Makan Siang
+								</p>
+							</div>
+						</div>
+						<div class='bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-center items-center'>
+							<img src='./Images/ayam.jpg' alt='Placeholder' class='w-full' />
+							<div class='p-4 '>
+								<p class='text-gray-800 text-lg text-center'>Resep Ayam</p>
+							</div>
+						</div>
+						<div class='bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-center items-center'>
+							<img src='./Images/daging.jpg' alt='Placeholder' class='w-full' />
+							<div class='p-4 '>
+								<p class='text-gray-800 text-lg text-center'>Resep Daging</p>
+							</div>
+						</div>
+						<div class='bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-center items-center'>
+							<img src='./Images/sayur.jpg' alt='Placeholder' class='w-full' />
+							<div class='p-4 '>
+								<p class='text-gray-800 text-lg text-center'>Resep Sayuran</p>
+							</div>
+						</div>
+						<div class='bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-center items-center'>
+							<img
+								src='./Images/seafood.jpg'
+								alt='Placeholder'
+								class='w-full'
+							/>
+							<div class='p-4 '>
+								<p class='text-gray-800 text-lg text-center'>Resep Seafood</p>
+							</div>
+						</div>
+						<div class='bg-white rounded-lg shadow-lg overflow-hidden flex flex-col justify-center items-center'>
+							<img
+								src='./Images/sarapan.jpg'
+								alt='Placeholder'
+								class='w-full'
+							/>
+							<div class='p-4 '>
+								<p class='text-gray-800 text-lg text-center'>Sarapan</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class='container mx-auto w-4/5'>
+					<h2 class='text-2xl font-semibold text-center mb-4'>Unggah Resep</h2>
+
+					<div class='max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row'>
+						<div class='lg:w-1/2'>
+							<img
+								src='./Images/ayam kuah kaldu.jpg'
+								alt='Placeholder'
+								class='w-full h-auto'
+							/>
+						</div>
+						<div class='lg:w-1/2 p-6'>
+							<h2 class='text-xl font-bold'>Menu kaya nutrisi ala kamu</h2>
+							<p class='text-gray-600'>Published by: Putri Habibie</p>
+							<h3 class='text-lg font-semibold mt-4'>
+								Nama resep: Ayam Kuah Kaldu
+							</h3>
+							<p class='text-gray-700 mt-2'>
+								Deskripsi: Halo apakabar ayam kuah kaldu ini.
+							</p>
+						</div>
+					</div>
+
+					<div class='max-w-4xl mx-auto mt-6 text-center'>
+						<button class='bg-blue-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-600 mr-4'>
+							Lihat Resep Lainnya
+						</button>
+						<button class='bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600'>
+							Unggah Resep Mu
+						</button>
+					</div>
+				</section>
+
 				<section className='container mx-auto px-6 pt-10 pb-4 flex flex-col items-center lg:px-20'>
 					<h1 className='text-slate-700 text-3xl font-bold mb-8'>
 						Resep Terbaru
