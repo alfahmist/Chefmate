@@ -60,7 +60,7 @@ const Detail = () => {
           {/* end content */}
 
           {/* bagian mas canro */}
-          <Aside className="w-[292px] hidden lg:block ml-6" />
+          <Aside />
         </div>
       </main>
     </MainLayout>
