@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Header() {
-	return (
-		<nav className='w-[80%] mx-auto flex gap-4 my-5 justify-center'>
-			<Link to={'/'}>Home</Link>
-			<Link to={'/favorite'}>Favorite</Link>
-			<Link to={'/create-recipe'}>Create Recipe</Link>
-			<Link to={'/login'}>Login</Link>
-			<Link to={'/register'}>Register</Link>
-		</nav>
-	);
+  return (
+    <nav className="sticky top-0 bg-white w-full mx-auto flex gap-4 p-5 justify-center z-20 shadow-lg">
+      <Link to={"/"}>Home</Link>
+      <Link to={"/favorite"}>Favorite</Link>
+      <Link to={"/create-recipe"}>Create Recipe</Link>
+      <Link to={"/login"}>Login</Link>
+      <Link to={"/register"}>Register</Link>
+    </nav>
+  );
 }
 
 export default Header;
