@@ -3,6 +3,40 @@ import MainLayout from '../../layout/MainLayout';
 import Card from './Card';
 import { Slider } from './Slider';
 
+const datas = [
+	{
+		id: 1,
+		image: 'ayam.jpg',
+		durasi: '1 Jam',
+		kesulitan: 'sulit',
+		deskripsi: 'Cara Membuat Ayam Geprek a la Rumahan, Pedas dan Renyah',
+	},
+	{
+		id: 2,
+		image: 'mie-goreng.jpg',
+		durasi: '20 menit',
+		kesulitan: 'sedang',
+		deskripsi:
+			'Cara Membuat mie goreng sederhana  a la Rumahan, Enak dan Lezat',
+	},
+	{
+		id: 3,
+		image: 'sate.jpg',
+		durasi: '10 menit',
+		kesulitan: 'mudah',
+		deskripsi:
+			'Cara Membuat sate ayam sederhana a la Rumahan, enak dan praktis',
+	},
+	{
+		id: 4,
+		image: 'tumis.jpg',
+		durasi: '40 menit',
+		kesulitan: 'sulit',
+		deskripsi:
+			'Cara Membuat tumis buncis tempe tahu sederhana a la Rumahan, Enak dan Mantap',
+	},
+];
+
 function index() {
 	return (
 		<MainLayout>
@@ -12,15 +46,13 @@ function index() {
 						Resep Terbaru
 					</h1>
 					<div className='flex flex-col gap-8 mb-8 lg:flex-row justify-center'>
-						<Link to={'/detail/1'}>
-							<Card image={'src/assets/img/ayam.jpg'} />
-						</Link>
-						<Link to={'/detail/1'}>
-							<Card image={'src/assets/img/ayam.jpg'} />
-						</Link>
-						<Link to={'/detail/1'}>
-							<Card image={'src/assets/img/ayam.jpg'} />
-						</Link>
+						{datas.map((data, index) => {
+							return (
+								<Link key={index} to={`/detail/${data.id}`}>
+									<Card data={data} />
+								</Link>
+							);
+						})}
 					</div>
 					<a
 						href='#'
@@ -36,18 +68,13 @@ function index() {
 						Artikel Terbaru
 					</h1>
 					<div className='flex flex-col gap-8 mb-8 lg:flex-row'>
-						<Link to={'/detail/1'}>
-							<Card image={'src/assets/img/ayam.jpg'} />
-						</Link>
-						<Link to={'/detail/1'}>
-							<Card image={'src/assets/img/ayam.jpg'} />
-						</Link>
-						<Link to={'/detail/1'}>
-							<Card image={'src/assets/img/ayam.jpg'} />
-						</Link>
-						<Link to={'/detail/1'}>
-							<Card image={'src/assets/img/ayam.jpg'} />
-						</Link>
+						{datas.slice(1).map((data, index) => {
+							return (
+								<Link key={index} to={`/detail/${data.id}`}>
+									<Card data={data} />
+								</Link>
+							);
+						})}
 					</div>
 					<a
 						href='#'

@@ -1,4 +1,5 @@
-const Card = ({ image }) => {
+const Card = ({ data }) => {
+	console.log(data);
 	return (
 		<>
 			<div className='relative'>
@@ -20,9 +21,9 @@ const Card = ({ image }) => {
 				</button>
 				<div className='w-full overflow-hidden rounded-2xl h-64'>
 					<img
-						src={image}
+						src={`src/assets/img/${data.image}`}
 						alt='ayam geprek'
-						className='cursor-pointer hover:scale-105 duration-500 w-full '
+						className='cursor-pointer hover:scale-105 duration-500 h-full w-full object-cover object-center '
 					/>
 				</div>
 				<div className='flex flex-row justify-start gap-x-2 my-4'>
@@ -39,7 +40,7 @@ const Card = ({ image }) => {
 								clipRule='evenodd'
 							/>
 						</svg>
-						<span className='font-bold'>1 Jam</span>
+						<span className='font-bold'>{data.durasi}</span>
 					</button>
 					<button className='border-2 border-orange-500 text-orange-500 rounded-xl flex p-1 hover:text-white hover:bg-orange-500 duration-500 cursor-pointer'>
 						<svg
@@ -54,11 +55,11 @@ const Card = ({ image }) => {
 								clipRule='evenodd'
 							/>
 						</svg>
-						<span className='font-bold'>Sedang</span>
+						<span className='font-bold'>{data.kesulitan}</span>
 					</button>
 				</div>
 				<p className='text-slate-700 text-2xl font-bold hover:text-green-600 duration-500 cursor-pointer'>
-					Cara Membuat Ayam Geprek a la Rumahan, Pedas dan Renyah
+					{data.deskripsi}
 				</p>
 			</div>
 		</>
