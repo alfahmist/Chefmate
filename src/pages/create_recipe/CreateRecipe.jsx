@@ -66,26 +66,32 @@ function index() {
       <main className="bg-bgdetailbase">
         <form onSubmit={handleSubmit}>
           <section id="contact" className="pt-36 pb-32">
-            <div className="container">
+            <div className="container mx-auto">
               <div className="w-full px-4">
                 <div className="max-w-xl mx-auto text-center mb-16">
                   <div className="bg-cookpad-gray-200">
                     <div className="py-rg md:py-lg image-upload text-center">
-                      <div className="text-cookpad-gray-600">
-                        <img
-                          className="w-28 mx-auto"
-                          src={selectedFile ? preview : imgCamera2}
-                        />
+                      <label htmlFor="inputGambar">
+                        <div className="text-cookpad-gray-600">
+                          {selectedFile ? (
+                            <img className="mx-auto w-full" src={preview} />
+                          ) : (
+                            <>
+                              <img className="w-28 mx-auto" src={imgCamera2} />
+                              <p className="text-cookpad-20 font-semibold mt-md">
+                                Tambahkan foto resep
+                              </p>
 
-                        <p className="text-cookpad-20 font-semibold mt-md">
-                          Tambahkan foto resep
-                        </p>
-
-                        <p className="text-cookpad-14">
-                          Tunjukkan foto hasil akhir masakanmu
-                        </p>
-                      </div>
+                              <p className="text-cookpad-14">
+                                Tunjukkan foto hasil akhir masakanmu
+                              </p>
+                            </>
+                          )}
+                        </div>
+                      </label>
                       <input
+                        className="hidden"
+                        id="inputGambar"
                         type="file"
                         name="file"
                         aria-label="Tambahkan foto resep"
@@ -221,16 +227,36 @@ function index() {
               </div>
 
               {/* onclick */}
-              <div className="bg-slate-300 rounded-md mb-2">
-                {listLangkah.length > 0
-                  ? listLangkah.map((item, index) => (
-                      <div key={index} className="flex gap-2">
-                        <span>{index + 1}.</span>
-                        <p>{item}</p>
+
+              {listLangkah.length > 0
+                ? listLangkah.map((item, index) => (
+                    <div key={index}>
+                      <div className="flex items-center">
+                        <div className="mr-2">
+                          <div className="bg-black rounded-md w-6 text-center text-white">
+                            {index + 2}
+                          </div>
+                        </div>
+                        <input
+                          onChange={(e) => setLangkah(e.target.value)}
+                          type="text"
+                          name="Langkah - Langkah"
+                          placeholder={`langkah ${index + 2}`}
+                          className="resep-list bg-gray-300 h-10 px-4 rounded-md text-xl"
+                          value={langkah}
+                        />
                       </div>
-                    ))
-                  : ""}
-              </div>
+                      <div className="w-32 h-28 p-2">
+                        <div className="w-full h-full bg-slate-200 rounded-lg">
+                          <img
+                            src={imgCamera}
+                            className="w-28 mx-auto p-4 pt-3"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  ))
+                : ""}
             </div>
           </section>
 
