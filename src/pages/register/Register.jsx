@@ -3,6 +3,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaUser, FaLock } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
+
+
 function index() {
   const navigate = useNavigate();
 
@@ -64,6 +66,7 @@ function index() {
           </Link>
         </p>
       </form>
+      
     </main>
   );
 }

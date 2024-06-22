@@ -1,11 +1,32 @@
-import MainLayout from "../../layout/MainLayout"
+import img2 from "../../assets/img/resep/Dessert.jpg";
+import img7 from "../../assets/img/resep/ayam.jpg";
+import img8 from "../../assets/img/resep/daging.jpg";
+import img9 from "../../assets/img/resep/sayur.jpg";
+
 import { Link } from "react-router-dom"
 import { FaUser,FaLock } from "react-icons/fa"
 
 function index() {
   return (
-    <MainLayout>
-<main className="bg-slate-100 p-8 flex justify-center items-center ">
+  
+<main className="bg-slate-100 p-8 flex justify-between  items-center pt-16   ">
+<div className="w-[50%] flex flex-wrap  ">
+<div className="w-[45%] shadow-md shadow-black rounded-xl overflow-hidden m-1">
+<img src={img2} alt="Placeholder" className="w-full" />
+</div>
+<div className="w-[45%] shadow-md shadow-black rounded-xl overflow-hidden m-1">
+<img src={img7} alt="Placeholder" className="w-full" />
+</div>
+<div className="w-[45%] shadow-md shadow-black rounded-xl overflow-hidden m-1">
+<img src={img8} alt="Placeholder" className="w-full" />
+</div>
+<div className="w-[45%] shadow-md shadow-black rounded-xl overflow-hidden m-1">
+<img src={img9} alt="Placeholder" className="w-full" />
+</div>
+
+
+</div>
+
 
   <form action="" className="w-[420px] bg-lime-500 p-8 rounded-xl shadow-md shadow-emerald-800">
     <h1 className="text-3xl font-semibold text-center mb-6 text-white">Login</h1>
@@ -31,7 +52,7 @@ function index() {
 
 </div>
 </main>
-    </MainLayout>
+    
   )
 }
 
