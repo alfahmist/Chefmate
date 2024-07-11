@@ -2,7 +2,8 @@
 import TimerIcon from "../../../assets/icons/clock.svg";
 import PersonIcon from "../../../assets/icons/person.svg";
 
-const Bahan = ({ data, bahanBaku, bahanSaus, bahanSambal }) => {
+const Bahan = ({ data }) => {
+  const bahanRecipe = data.bahans;
   return (
     <section id="bahan">
       <div className="lg:container">
@@ -15,11 +16,11 @@ const Bahan = ({ data, bahanBaku, bahanSaus, bahanSambal }) => {
           <div className="mb-4 flex gap-x-4 text-slate-600">
             <div className="flex items-center gap-x-2">
               <img className="h-[16px] w-[16px]" src={TimerIcon} alt="waktu" />
-              <span>{data.waktu}</span>
+              <span>{data.durasi}</span>
             </div>
             <div className="flex items-center gap-x-2">
               <img className="h-[16px] w-[16px]" src={PersonIcon} alt="orang" />
-              <span>{data.porsi}</span>
+              <span>{data.porsi} orang</span>
             </div>
           </div>
           {/* <!-- end waktu --> */}
@@ -27,37 +28,12 @@ const Bahan = ({ data, bahanBaku, bahanSaus, bahanSambal }) => {
           {/* <!-- start isi bahan --> */}
           <div>
             <ol>
-              {bahanBaku.map((item, index) => (
+              {bahanRecipe.map((item, index) => (
                 <li
                   className="border-b border-dashed border-slate-300 py-2"
                   key={index}
                 >
-                  <span className="font-semibold mr-1">{item.jumlah}</span>
-                  {item["nama-bahan"]}
-                </li>
-              ))}
-              <li className="mb-2 mt-4 py-2">
-                <span className="font-semibold">Saus</span>
-              </li>
-              {bahanSaus.map((item, index) => (
-                <li
-                  className="border-b border-dashed border-slate-300 py-2"
-                  key={index}
-                >
-                  <span className="font-semibold mr-1">{item.jumlah}</span>
-                  {item["nama-bahan"]}
-                </li>
-              ))}
-              <li className="mb-2 mt-4 py-2">
-                <span className="font-semibold">Sambal</span>
-              </li>
-              {bahanSambal.map((item, index) => (
-                <li
-                  className="border-b border-dashed border-slate-300 py-2"
-                  key={index}
-                >
-                  <span className="font-semibold mr-1">{item.jumlah}</span>
-                  {item["nama-bahan"]}
+                  {item.nama_bahan}
                 </li>
               ))}
             </ol>

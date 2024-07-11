@@ -1,19 +1,21 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+// import { useState } from "react";
 
 const StepMasakan = ({ data }) => {
-  const [isImageExpanded, setIsImageExpanded] = useState(false);
-  const [expandedImageUrl, setExpandedImageUrl] = useState("");
+  // const [isImageExpanded, setIsImageExpanded] = useState(false);
+  // const [expandedImageUrl, setExpandedImageUrl] = useState("");
 
-  const handleImageExpand = (imageUrl) => {
-    setIsImageExpanded(true);
-    setExpandedImageUrl(imageUrl);
-  };
+  // const handleImageExpand = (imageUrl) => {
+  //   setIsImageExpanded(true);
+  //   setExpandedImageUrl(imageUrl);
+  // };
 
-  const handleCloseImage = () => {
-    setIsImageExpanded(false);
-    setExpandedImageUrl("");
-  };
+  // const handleCloseImage = () => {
+  //   setIsImageExpanded(false);
+  //   setExpandedImageUrl("");
+  // };
+
+  const StepRecipe = data.langkahs;
 
   return (
     <section id="step">
@@ -25,7 +27,7 @@ const StepMasakan = ({ data }) => {
 
           <div>
             <ol>
-              {data.map((item, index) => (
+              {StepRecipe.map((item, index) => (
                 <li className="mb-4 flex relative" key={index}>
                   <div className="mr-2 w-6">
                     <div className="h-6 w-6 rounded-full bg-slate-700 text-center font-semibold text-white">
@@ -34,9 +36,9 @@ const StepMasakan = ({ data }) => {
                   </div>
                   <div>
                     <div className="mb-2">
-                      <p className="mb-2">{item.judul}</p>
+                      <p className="mb-2">{item.nama_langkah}</p>
                     </div>
-                    <div className="scroll-bar-hideen -mx-4 mb-2 overflow-auto px-4">
+                    {/* <div className="scroll-bar-hideen -mx-4 mb-2 overflow-auto px-4">
                       <button onClick={() => handleImageExpand(item.img)}>
                         <img
                           className="h-[128px] w-[160px] rounded-lg object-cover"
@@ -44,9 +46,9 @@ const StepMasakan = ({ data }) => {
                           alt={index + 1}
                         />
                       </button>
-                    </div>
+                    </div> */}
                   </div>
-                  {isImageExpanded && expandedImageUrl === item.img && (
+                  {/* {isImageExpanded && expandedImageUrl === item.img && (
                     <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
                       <div className="relative">
                         <img
@@ -62,7 +64,7 @@ const StepMasakan = ({ data }) => {
                         </button>
                       </div>
                     </div>
-                  )}
+                  )} */}
                 </li>
               ))}
             </ol>

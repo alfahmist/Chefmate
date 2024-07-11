@@ -27,11 +27,25 @@ const Reaksi = () => {
                 Canro Sigalingging dan pengguna lainnya memberikan reaksi
               </a>
             </div>
-            <ul>
-              <button className="mr-2 flex items-center rounded-full bg-slate-300 px-2 py-1 text-sm hover:bg-slate-400 focus:outline-none">
-                <span className="btn__icon">😋</span>
-                <span>5</span>
-              </button>
+            <ul className="flex gap-2">
+              <li>
+                <button className="flex items-center rounded-full bg-slate-300 px-2 py-1 text-sm hover:bg-slate-400 focus:outline-none">
+                  <span className="btn__icon">😋</span>
+                  <span className="ml-1">5</span>
+                </button>
+              </li>
+              <li>
+                <button className="flex items-center rounded-full bg-slate-300 px-2 py-1 text-sm hover:bg-slate-400 focus:outline-none">
+                  <span className="btn__icon">😍</span>
+                  <span className="ml-1">5</span>
+                </button>
+              </li>
+              <li>
+                <button className="flex items-center rounded-full bg-slate-300 px-2 py-1 text-sm hover:bg-slate-400 focus:outline-none">
+                  <span className="btn__icon">👏</span>
+                  <span className="ml-1">5</span>
+                </button>
+              </li>
             </ul>
           </div>
         </div>
