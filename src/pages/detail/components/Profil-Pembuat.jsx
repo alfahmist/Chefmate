@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 // import LocationIcon from "../../../assets/icons/location.svg";
-import PersonImg from "../../../assets/img/person_dummy.jpg";
+// import PersonImg from "../../../assets/img/person_dummy.jpg";
 
 const ProfilPembuat = ({ data }) => {
   const dataUser = data.users;
@@ -24,12 +24,12 @@ const ProfilPembuat = ({ data }) => {
           </h2>
 
           <div id="author-profil">
-            <div className="mb-4 flex items-stretch gap-x-4">
+            <div className="mb-4 flex items-center gap-x-4">
               <a href="#">
                 <img
                   className="w-14 rounded-full md:w-24"
-                  src={PersonImg}
-                  alt="profil author"
+                  src={`/assets/img/user/${dataUser.gambar}`}
+                  alt={dataUser.name_user}
                 />
               </a>
 

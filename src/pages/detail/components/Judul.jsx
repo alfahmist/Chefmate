@@ -5,8 +5,8 @@ const Judul = ({ data }) => {
       <div className="lg:container">
         <img
           className="max-h-72 w-full object-cover lg:my-4 lg:max-h-[482px] lg:w-[680px] lg:overflow-hidden lg:rounded-lg lg:shadow"
-          src={data.foto_recipe}
-          alt={data.judul}
+          src={`/assets/img/resep/${data.foto_recipe_url}`}
+          alt={data.foto_recipe}
         />
 
         <div className="mb-2 p-4 lg:mb-4 lg:rounded-lg lg:shadow bg-white">

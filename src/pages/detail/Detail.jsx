@@ -15,7 +15,7 @@ import StepMasakan from "./components/StepMasakan";
 // import Cooksnap from "./components/Cooksnap";
 // import Komentar from "./components/Komentar";
 import Reaksi from "./components/Reaksi";
-// import Aside from "./components/Aside";
+import Aside from "./components/Aside";
 import ProfilPembuat from "./components/Profil-Pembuat";
 
 const Detail = () => {
@@ -61,7 +61,7 @@ const Detail = () => {
             <Bahan data={data} />
 
             <StepMasakan data={data} />
-            <Reaksi />
+            <Reaksi recipeId={params} data={data} />
 
             {/* bagian mas canro */}
             {/* start section cooksnap */}
@@ -78,7 +78,7 @@ const Detail = () => {
           {/* end content */}
 
           {/* bagian mas canro */}
-          {/* <Aside /> */}
+          <Aside />
         </div>
       </main>
     </MainLayout>

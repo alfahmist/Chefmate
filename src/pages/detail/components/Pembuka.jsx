@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 // import LocationIcon from "../../../assets/icons/location.svg";
-import PersonImg from "../../../assets/img/person_dummy.jpg";
+// import PersonImg from "../../../assets/img/person_dummy.jpg";
 
 const Pembuka = ({ data }) => {
   const dataUser = data.users;
@@ -17,7 +17,7 @@ const Pembuka = ({ data }) => {
             <a href="#" className="flex items-center gap-x-2">
               <img
                 className="max-h-[40px] max-w-[40px] rounded-full"
-                src={PersonImg}
+                src={`/assets/img/user/${dataUser.gambar}`}
                 alt="pembuat"
               />
               <div>
