@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import api from "../../services/api"; // Import api.js
+import api from "../../services/api";
 
 import MainLayout from "../../layout/MainLayout";
 
@@ -23,7 +23,7 @@ const Detail = () => {
 
   const [data, setData] = useState(null);
 
-  console.log(data);
+  // console.log(data);
 
   useEffect(() => {
     const fetchData = async () => {

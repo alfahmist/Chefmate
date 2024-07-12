@@ -40,7 +40,7 @@ const Cooksnap = ({ id_recipe }) => {
       <div className="lg:container">
         <div className="mb-2 flex flex-col p-4 text-slate-700 lg:mb-4 lg:rounded-lg lg:shadow bg-white">
           <h2 className="mb-4 text-lg font-semibold text-slate-700">
-            Cooksnap({data[0].total_cooksnaps})
+            Cooksnap
           </h2>
           <div className="flex flex-wrap">
             {data.map((item, index) => (

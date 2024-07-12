@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 const Judul = ({ data }) => {
-  console.log(data, " data");
   return (
     <section id="judul">
       <div className="lg:container">
