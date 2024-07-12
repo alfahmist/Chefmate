@@ -17,8 +17,8 @@ const Pembuka = ({ data }) => {
             <a href="#" className="flex items-center gap-x-2">
               <img
                 className="max-h-[40px] max-w-[40px] rounded-full"
-                src={`/assets/img/user/${dataUser.gambar}`}
-                alt="pembuat"
+                src={`http://localhost:3000/${dataUser.img_url}`}
+                alt={dataUser.img}
               />
               <div>
                 {/* <!-- nama pembuat --> */}

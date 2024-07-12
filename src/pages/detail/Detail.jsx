@@ -12,7 +12,7 @@ import Pembuka from "./components/Pembuka";
 // import Favorite from "./components/Favorite";
 import Bahan from "./components/Bahan";
 import StepMasakan from "./components/StepMasakan";
-// import Cooksnap from "./components/Cooksnap";
+import Cooksnap from "./components/Cooksnap";
 // import Komentar from "./components/Komentar";
 import Reaksi from "./components/Reaksi";
 import Aside from "./components/Aside";
@@ -65,7 +65,7 @@ const Detail = () => {
 
             {/* bagian mas canro */}
             {/* start section cooksnap */}
-            {/* <Cooksnap /> */}
+            <Cooksnap id_recipe={params} />
             {/* end section cooksnap */}
 
             {/* bagian mas canro */}

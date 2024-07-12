@@ -28,8 +28,8 @@ const ProfilPembuat = ({ data }) => {
               <a href="#">
                 <img
                   className="w-14 rounded-full md:w-24"
-                  src={`/assets/img/user/${dataUser.gambar}`}
-                  alt={dataUser.name_user}
+                  src={`http://localhost:3000/${dataUser.img_url}`}
+                  alt={dataUser.img}
                 />
               </a>
 

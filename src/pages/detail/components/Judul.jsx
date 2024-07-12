@@ -1,11 +1,12 @@
 /* eslint-disable react/prop-types */
 const Judul = ({ data }) => {
+  console.log(data, " data");
   return (
     <section id="judul">
       <div className="lg:container">
         <img
           className="max-h-72 w-full object-cover lg:my-4 lg:max-h-[482px] lg:w-[680px] lg:overflow-hidden lg:rounded-lg lg:shadow"
-          src={`/assets/img/resep/${data.foto_recipe_url}`}
+          src={`http://localhost:3000${data.foto_recipe_url}`}
           alt={data.foto_recipe}
         />
 

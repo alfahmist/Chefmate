@@ -16,7 +16,7 @@ const Bahan = ({ data }) => {
           <div className="mb-4 flex gap-x-4 text-slate-600">
             <div className="flex items-center gap-x-2">
               <img className="h-[16px] w-[16px]" src={TimerIcon} alt="waktu" />
-              <span>{data.durasi} menit</span>
+              <span>{data.durasi}</span>
             </div>
             <div className="flex items-center gap-x-2">
               <img className="h-[16px] w-[16px]" src={PersonIcon} alt="orang" />

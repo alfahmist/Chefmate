@@ -1,77 +1,64 @@
-import img1 from "../../../assets/img/detail/cooksnap/bubur.webp";
-import img2 from "../../../assets/img/detail/cooksnap/photo.webp";
-import img3 from "../../../assets/img/detail/cooksnap/santan.webp";
-import img4 from "../../../assets/img/detail/step/7.webp";
-import img5 from "../../../assets/img/detail/cooksnap/santan2.webp";
-import img6 from "../../../assets/img/person_dummy.jpg";
+/* eslint-disable react/prop-types */
+import { useState, useEffect } from "react";
+import api from "../../../services/api";
 
-const Cooksnap = () => {
+const Cooksnap = ({ id_recipe }) => {
+  const [data, setData] = useState(null);
+
+  console.log(data);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get(`/cooksnap/${id_recipe}`);
+        setData(response.data.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [id_recipe]);
+
+  console.log(data, "cooksnap");
+
+  if (!data) {
+    return <div className="text-center p-4">loading</div>;
+  }
+
   return (
     <section id="cooksnap">
       <div className="lg:container">
         <div className="mb-2 flex flex-col p-4 text-slate-700 lg:mb-4 lg:rounded-lg lg:shadow bg-white">
           <h2 className="mb-4 text-lg font-semibold text-slate-700">
-            Cooksnap(3)
+            Cooksnap({data[0].total_cooksnaps})
           </h2>
           <div className="flex flex-wrap">
-            <div className="mb-2 flex flex-col p-4 lg:mb-4 lg:rounded-lg lg:shadow sm:mr-2">
-              <img
-                className="h-[120px] w-[120px] rounded-lg object-cover"
-                src={img1}
-                alt="8"
-              />
-              <div className="flex">
+            {data.map((item, index) => (
+              <div
+                className="mb-2 flex flex-col w-[150px] p-4 lg:mb-4 lg:rounded-lg lg:shadow sm:mr-2"
+                key={index}
+              >
                 <img
-                  className="mr-2 mt-2 h-[30px] w-[30px] rounded-full object-cover"
-                  src={img2}
-                  alt="icon"
+                  className="h-[120px] w-[120px] rounded-lg object-cover"
+                  src={`http://localhost:3000/${item.img_url}`}
+                  alt="8"
                 />
-                <span className="mt-3 text-sm font-semibold truncate">
-                  Annisa Rahim
-                </span>
+                <div className="flex">
+                  <img
+                    className="mr-2 mt-2 h-[30px] w-[30px] rounded-full object-cover"
+                    src={`http://localhost:3000/${item.img_user_url}`}
+                    alt="icon"
+                  />
+                  <span className="mt-3 text-sm font-semibold truncate">
+                    {item.name_user}
+                  </span>
+                </div>
+                <p className="mt-2 text-sm font-light truncate">
+                  {item.name_cooksnap}
+                </p>
               </div>
-              <p className="mt-2 text-sm font-light truncate">
-                Enak ada Wanginya
-              </p>
-            </div>
-            <div className="mb-2 flex flex-col p-4 lg:mb-4 lg:rounded-lg lg:shadow sm:mr-2">
-              <img
-                className="h-[120px] w-[120px] rounded-lg object-cover"
-                src={img3}
-                alt="9"
-              />
-              <div className="flex">
-                <img
-                  className="mr-2 mt-2 h-[30px] w-[30px] rounded-full object-cover"
-                  src={img4}
-                  alt="icon"
-                />
-                <span className="mt-3 text-sm font-semibold truncate">
-                  Anton Budi
-                </span>
-              </div>
-              <p className="mt-2 text-sm font-light truncate">Mantap</p>
-            </div>
-            <div className="mb-2 flex flex-col p-4 lg:mb-4 lg:rounded-lg lg:shadow sm:mr-2">
-              <img
-                className="h-[120px] w-[120px] rounded-lg object-cover"
-                src={img5}
-                alt="10"
-              />
-              <div className="flex">
-                <img
-                  className="mt-2 h-[30px] w-[30px] rounded-full object-cover"
-                  src={img6}
-                  alt="profil"
-                />
-                <span className="ml-2 mt-3 text-sm font-semibold truncate">
-                  Nadeo
-                </span>
-              </div>
-              <p className="mt-2 text-sm font-extralight truncate">
-                Lumayan lah
-              </p>
-            </div>
+            ))}
           </div>
 
           <div className="flex flex-col items-center">
