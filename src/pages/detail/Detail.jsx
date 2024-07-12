@@ -13,7 +13,7 @@ import Pembuka from "./components/Pembuka";
 import Bahan from "./components/Bahan";
 import StepMasakan from "./components/StepMasakan";
 import Cooksnap from "./components/Cooksnap";
-// import Komentar from "./components/Komentar";
+import Komentar from "./components/Komentar";
 import Reaksi from "./components/Reaksi";
 import Aside from "./components/Aside";
 import ProfilPembuat from "./components/Profil-Pembuat";
@@ -62,16 +62,8 @@ const Detail = () => {
 
             <StepMasakan data={data} />
             <Reaksi recipeId={params} data={data} />
-
-            {/* bagian mas canro */}
-            {/* start section cooksnap */}
             <Cooksnap id_recipe={params} />
-            {/* end section cooksnap */}
-
-            {/* bagian mas canro */}
-            {/* start section komentar */}
-            {/* <Komentar /> */}
-            {/* end section komentar */}
+            <Komentar id_recipe={params} />
 
             <ProfilPembuat data={data} />
           </div>

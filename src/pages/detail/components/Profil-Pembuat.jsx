@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-// import LocationIcon from "../../../assets/icons/location.svg";
-// import PersonImg from "../../../assets/img/person_dummy.jpg";
 
 const ProfilPembuat = ({ data }) => {
   const dataUser = data.users;
@@ -63,7 +61,7 @@ const ProfilPembuat = ({ data }) => {
               </div>
             </div>
             <p className="text-base text-slate-600">
-              {dataUser.deskripsi_user}
+              {dataUser.description_user}
             </p>
           </div>
         </div>
