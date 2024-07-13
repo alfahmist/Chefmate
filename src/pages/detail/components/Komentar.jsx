@@ -3,11 +3,19 @@ import commentpic from "../../../assets/icons/comment.svg";
 
 import { useEffect, useState } from "react";
 import api from "../../../services/api";
+import axios from "axios";
 
 const Komentar = ({ id_recipe }) => {
   const [data, setData] = useState(null);
-  console.log(data, "sadam");
   const [comment, setComment] = useState("");
+  const [token, setToken] = useState("");
+
+  const getToken = () => {
+    setToken(localStorage.getItem("token"));
+  };
+  useEffect(() => {
+    getToken();
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,11 +35,17 @@ const Komentar = ({ id_recipe }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await api.post(`/komentar/${id_recipe}`, {
-        deskripsi: comment,
-      });
-
-      console.log(response.data.data);
+      const response = await axios.post(
+        `http://localhost:3000/komentar/${id_recipe}`,
+        {
+          deskripsi: comment,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       if (response.status === 201) {
         alert(response.data.message);

@@ -14,7 +14,7 @@ import Bahan from "./components/Bahan";
 import StepMasakan from "./components/StepMasakan";
 import Cooksnap from "./components/Cooksnap";
 import Komentar from "./components/Komentar";
-import Reaksi from "./components/Reaksi";
+// import Reaksi from "./components/Reaksi";
 import Aside from "./components/Aside";
 import ProfilPembuat from "./components/Profil-Pembuat";
 
@@ -61,7 +61,7 @@ const Detail = () => {
             <Bahan data={data} />
 
             <StepMasakan data={data} />
-            <Reaksi recipeId={params} data={data} />
+            {/* <Reaksi recipeId={params} data={data} /> */}
             <Cooksnap id_recipe={params} />
             <Komentar id_recipe={params} />
 
