@@ -226,13 +226,13 @@ function index() {
               );
             }) : null}
           </div>
-          <a
+          {/* <a
             href="#"
             target="_blank"
             className="bg-green-600 text-white w-8/12 h-14 text-2xl font-semibold rounded-lg hover:bg-green-800 duration-500 text-center leading-[56px]"
           >
             Lebih Banyak
-          </a>
+          </a> */}
         </section>
 
         {/* <section className="bg-white container mx-auto px-6 pt-10 pb-4 flex flex-col items-center lg:px-20">
@@ -259,7 +259,7 @@ function index() {
 
         <section className="relative my-20 h-[430px]">
           <h1 className="text-slate-700 text-3xl font-bold mb-8 text-center">
-            Semua Produk
+            Bumbu dan Minuman
           </h1>
           <Slider />
         </section>
