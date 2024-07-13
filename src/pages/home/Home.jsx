@@ -60,8 +60,13 @@ function index() {
 
 
   const [datas, setDatas] = useState(null);
+  const [token, setToken] = useState([]);
 
+    
+   
   useEffect(() => {
+    setToken(localStorage.getItem("token"))
+
     const fetchData = async () => {
       try {
         const response = await api.get(`/recipe/limit/4`);
@@ -207,7 +212,7 @@ function index() {
             <button className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-600 mr-4">
               Lihat Resep Lainnya
             </button>
-            <Link to={`/create-recipe`} className="bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600">
+            <Link to={`${!token ? '/login' : '/create-recipe'}`} className="bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600">
               Unggah Resep Mu
             </Link>
           </div>
