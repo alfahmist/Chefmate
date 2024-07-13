@@ -23,12 +23,14 @@ function Header() {
       >
         Favorite
       </Link>
+      { !token ? '' :   
       <Link
-        to={"/create-recipe"}
-        className="hover:-translate-y-1 duration-200 ease-in-out text-xl mx-2"
-      >
-        Create Recipe
-      </Link>
+      to={"/create-recipe"}
+      className="hover:-translate-y-1 duration-200 ease-in-out text-xl mx-2"
+    >
+      Create Recipe
+    </Link> 
+      }
       {token ? (
         <button
           onClick={handleLogout}

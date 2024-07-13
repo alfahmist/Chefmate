@@ -207,9 +207,9 @@ function index() {
             <button className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-600 mr-4">
               Lihat Resep Lainnya
             </button>
-            <button className="bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600">
+            <Link to={`/create-recipe`} className="bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600">
               Unggah Resep Mu
-            </button>
+            </Link>
           </div>
         </section>
 

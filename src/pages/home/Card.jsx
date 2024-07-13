@@ -1,4 +1,6 @@
 const Card = ({ data }) => {
+
+	const localhost = 'http://localhost:3000'
 	return (
 		<>
 			<div className='relative'>
@@ -20,7 +22,8 @@ const Card = ({ data }) => {
 				</button>
 				<div className='w-full overflow-hidden rounded-2xl h-64'>
 					<img
-						src={`src/assets/img/${data.image ?? data.foto_recipe}`}
+						// src={`src/assets/img/${data.image ?? data.foto_recipe}`}
+						src={`${localhost}${data.foto_recipe_url}`}
 						alt={data.judul}
 						className='cursor-pointer hover:scale-105 duration-500 h-full w-full object-cover object-center '
 					/>
