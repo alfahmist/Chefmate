@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Card = ({ data }) => {
 
 	const localhost = 'http://localhost:3000'
@@ -20,13 +22,16 @@ const Card = ({ data }) => {
 						/>
 					</svg>
 				</button>
+
 				<div className='w-full overflow-hidden rounded-2xl h-64'>
+                <Link to={`/detail/${data.id}`}>
 					<img
 						// src={`src/assets/img/${data.image ?? data.foto_recipe}`}
 						src={`${localhost}${data.foto_recipe_url}`}
 						alt={data.judul}
 						className='cursor-pointer hover:scale-105 duration-500 h-full w-full object-cover object-center '
 					/>
+				</Link>
 				</div>
 				<div className='flex flex-row justify-start gap-x-2 my-4'>
 					<button className='border-2 border-orange-500 text-orange-500 rounded-xl flex p-1 hover:text-white hover:bg-orange-500 duration-500 cursor-pointer'>

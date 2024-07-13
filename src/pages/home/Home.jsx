@@ -220,9 +220,9 @@ function index() {
           <div className="flex flex-col gap-8 mb-8 lg:flex-row justify-center">
             {datas ? datas.map((data, index) => {
               return (
-                <Link key={index} to={`/detail/${data.id}`}>
-                  <Card data={data} />
-                </Link>
+                // <Link key={index} to={`/detail/${data.id}`}>
+                  <Card data={data} key={index}  />
+                // </Link>
               );
             }) : null}
           </div>
