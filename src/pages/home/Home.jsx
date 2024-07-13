@@ -95,12 +95,12 @@ function index() {
             <p className="text-lg md:text-xl text-white mb-8">
               Resep Sajian sehat untuk keluarga besar.
             </p>
-            <a
+            {/* <a
               href="#"
               className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-full inline-block"
             >
               Cek Resep
-            </a>
+            </a> */}
           </div>
         </section>
 
@@ -209,9 +209,9 @@ function index() {
           </div>
 
           <div className="max-w-4xl mx-auto mt-6 text-center">
-            <button className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-600 mr-4">
+            {/* <button className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-600 mr-4">
               Lihat Resep Lainnya
-            </button>
+            </button> */}
             <Link to={`${!token ? '/login' : '/create-recipe'}`} className="bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600">
               Unggah Resep Mu
             </Link>
