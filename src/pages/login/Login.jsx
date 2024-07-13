@@ -4,7 +4,7 @@ import img7 from "../../assets/img/resep/ayam.jpg";
 import img8 from "../../assets/img/resep/daging.jpg";
 import img9 from "../../assets/img/resep/sayur.jpg";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaUser, FaLock } from "react-icons/fa";
 
 import { useState } from "react";
@@ -12,8 +12,9 @@ import api from "../../services/api";
 
 function index() {
   const [email, setEmail] = useState("");
-  console.log(email);
+
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -27,8 +28,8 @@ function index() {
       const { token } = response.data.data;
 
       localStorage.setItem("token", token);
-
       alert("Login success");
+      navigate("/");
     } catch (error) {
       if (error.response) {
         alert(error.response.data.message);
@@ -39,7 +40,7 @@ function index() {
   };
 
   return (
-    <main className="bg-slate-100 p-8 flex justify-between  items-center pt-16   ">
+    <main className="bg-slate-100 p-8 flex justify-center items-center pt-16   ">
       <div className="w-[50%] flex flex-wrap  ">
         <div className="w-[45%] shadow-md shadow-black rounded-xl overflow-hidden m-1">
           <img src={img2} alt="Placeholder" className="w-full" />
