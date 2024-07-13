@@ -121,24 +121,24 @@ function index() {
           <div className="flex flex-col gap-8 mb-8 lg:flex-row justify-center">
             {data.map((item, index) => {
               return (
-                <Link key={index} to={`/detail/${item.id}`}>
-                  <div className="relative w-[240px]">
-                    <button className="w-10 h-10 bg-orange-500 rounded-full flex absolute right-4 top-4 text-slate-50 cursor-pointer duration-500 hover:bg-orange-700 hover:text-slate-200 z-10">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        className="w-7 h-7 inline-block m-auto"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
-                        />
-                      </svg>
-                    </button>
+                <div className="relative w-[240px]" key={index}>
+                  <button className="w-10 h-10 bg-orange-500 rounded-full flex absolute right-4 top-4 text-slate-50 cursor-pointer duration-500 hover:bg-orange-700 hover:text-slate-200 z-10">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="w-7 h-7 inline-block m-auto"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                      />
+                    </svg>
+                  </button>
+                  <Link to={`/detail/${item.id}`}>
                     <div className="w-full overflow-hidden rounded-2xl h-64">
                       <img
                         src={`http://localhost:3000${item.foto_recipe_url}`}
@@ -166,8 +166,8 @@ function index() {
                     <p className="text-slate-700 text-xl font-bold hover:text-green-600 duration-500 cursor-pointer truncate">
                       {item.judul}
                     </p>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               );
             })}
           </div>
