@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+import { useState, useEffect } from "react";
+
 import { Link } from "react-router-dom";
 import MainLayout from "../../layout/MainLayout";
 import Card from "./Card";
@@ -15,41 +18,64 @@ import img10 from "../../assets/img/resep/seafood.jpg";
 import img11 from "../../assets/img/resep/sarapan.jpg";
 import img12 from "../../assets/img/resep/ayam-kuah-kaldu.jpg";
 
-const datas = [
-  {
-    id: 1,
-    image: "ayam.jpg",
-    durasi: "1 Jam",
-    kesulitan: "sulit",
-    deskripsi: "Cara Membuat Ayam Geprek a la Rumahan, Pedas dan Renyah",
-  },
-  {
-    id: 2,
-    image: "mie-goreng.jpg",
-    durasi: "20 menit",
-    kesulitan: "sedang",
-    deskripsi:
-      "Cara Membuat mie goreng sederhana  a la Rumahan, Enak dan Lezat",
-  },
-  {
-    id: 3,
-    image: "sate.jpg",
-    durasi: "10 menit",
-    kesulitan: "mudah",
-    deskripsi:
-      "Cara Membuat sate ayam sederhana a la Rumahan, enak dan praktis",
-  },
-  {
-    id: 4,
-    image: "tumis.jpg",
-    durasi: "40 menit",
-    kesulitan: "sulit",
-    deskripsi:
-      "Cara Membuat tumis buncis tempe tahu sederhana a la Rumahan, Enak dan Mantap",
-  },
-];
+import api from "../../services/api";
+
+// const datas = [
+//   {
+//     id: 1,
+//     image: "ayam.jpg",
+//     durasi: "1 Jam",
+//     kesulitan: "sulit",
+//     deskripsi: "Cara Membuat Ayam Geprek a la Rumahan, Pedas dan Renyah",
+//   },
+//   {
+//     id: 2,
+//     image: "mie-goreng.jpg",
+//     durasi: "20 menit",
+//     kesulitan: "sedang",
+//     deskripsi:
+//       "Cara Membuat mie goreng sederhana  a la Rumahan, Enak dan Lezat",
+//   },
+//   {
+//     id: 3,
+//     image: "sate.jpg",
+//     durasi: "10 menit",
+//     kesulitan: "mudah",
+//     deskripsi:
+//       "Cara Membuat sate ayam sederhana a la Rumahan, enak dan praktis",
+//   },
+//   {
+//     id: 4,
+//     image: "tumis.jpg",
+//     durasi: "40 menit",
+//     kesulitan: "sulit",
+//     deskripsi:
+//       "Cara Membuat tumis buncis tempe tahu sederhana a la Rumahan, Enak dan Mantap",
+//   },
+// ];
+
+
 
 function index() {
+
+
+  const [datas, setDatas] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get(`/recipe/limit/4`);
+        setDatas(response.data.data);
+        console.log("response")
+        console.log(response.data.data)
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <MainLayout>
       <main className="bg-slate-100">
@@ -192,13 +218,13 @@ function index() {
             Resep Terbaru
           </h1>
           <div className="flex flex-col gap-8 mb-8 lg:flex-row justify-center">
-            {datas.map((data, index) => {
+            {datas ? datas.map((data, index) => {
               return (
                 <Link key={index} to={`/detail/${data.id}`}>
                   <Card data={data} />
                 </Link>
               );
-            })}
+            }) : null}
           </div>
           <a
             href="#"
@@ -209,18 +235,18 @@ function index() {
           </a>
         </section>
 
-        <section className="bg-white container mx-auto px-6 pt-10 pb-4 flex flex-col items-center lg:px-20">
+        {/* <section className="bg-white container mx-auto px-6 pt-10 pb-4 flex flex-col items-center lg:px-20">
           <h1 className="text-slate-700 text-3xl font-bold mb-8">
             Artikel Terbaru
           </h1>
           <div className="flex flex-col gap-8 mb-8 lg:flex-row">
-            {datas.slice(1).map((data, index) => {
+            {datas ? datas.slice(1).map((data, index) => {
               return (
                 <Link key={index} to={`/detail/${data.id}`}>
                   <Card data={data} />
                 </Link>
               );
-            })}
+            }) : null}
           </div>
           <a
             href="#"
@@ -229,7 +255,7 @@ function index() {
           >
             Lebih Banyak
           </a>
-        </section>
+        </section> */}
 
         <section className="relative my-20 h-[430px]">
           <h1 className="text-slate-700 text-3xl font-bold mb-8 text-center">
@@ -240,15 +266,15 @@ function index() {
 
         <section className="container px-6 pt-10 pb-20 flex flex-row justify-center lg:px-20 mx-auto">
           <div className="flex flex-col md:flex-row">
-            <div className="flex-1 overflow-hidden">
+            {/* <div className="flex-1 overflow-hidden">
               <img
                 src={"/src/pages/home/images/subscribe.jpg"}
                 alt=""
                 className="w-full h-full"
               />
-            </div>
-            <div className="flex-1 p-8 bg-white border border-l-0 border-slate-300">
-              <h2 className="text-sm sm:text-3xl font-bold mb-3">
+            </div> */}
+            <div className="flex-1 p-8 bg-white border order-slate-300">
+              <h2 className="text-sm sm:text-3xl font-bold mb-5">
                 Dapatkan update terbaru resep Chefmate dengan mendaftar
                 sekarang!
               </h2>

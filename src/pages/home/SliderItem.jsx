@@ -10,13 +10,13 @@ const SliderItem = ({ text, image }) => {
 				<p className='text-xl font-bold text-slate-700 mb-3 h-20 px-2 lg:px-4'>
 					{text}
 				</p>
-				<a
+				{/* <a
 					href='#'
 					target='_blank'
 					className='border border-green-600 text-green-600 rounded-xl bg-white mx-4 mb-4 px-2 py-2 font-bold text-sm lg:text-lg hover:bg-green-600 hover:text-white duration-300'
 				>
 					Lihat Produk
-				</a>
+				</a> */}
 			</div>
 		</>
 	);

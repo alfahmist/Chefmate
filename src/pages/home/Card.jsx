@@ -1,5 +1,4 @@
 const Card = ({ data }) => {
-	console.log(data);
 	return (
 		<>
 			<div className='relative'>
@@ -21,8 +20,8 @@ const Card = ({ data }) => {
 				</button>
 				<div className='w-full overflow-hidden rounded-2xl h-64'>
 					<img
-						src={`src/assets/img/${data.image}`}
-						alt='ayam geprek'
+						src={`src/assets/img/${data.image ?? data.foto_recipe}`}
+						alt={data.judul}
 						className='cursor-pointer hover:scale-105 duration-500 h-full w-full object-cover object-center '
 					/>
 				</div>
@@ -55,11 +54,11 @@ const Card = ({ data }) => {
 								clipRule='evenodd'
 							/>
 						</svg>
-						<span className='font-bold'>{data.kesulitan}</span>
+						<span className='font-bold'>{data.kesulitan ?? "mudah"}</span>
 					</button>
 				</div>
 				<p className='text-slate-700 text-2xl font-bold hover:text-green-600 duration-500 cursor-pointer'>
-					{data.deskripsi}
+					{data.deskripsi ?? data.deskripsi_recipe ?? "deskripsi recipe"}
 				</p>
 			</div>
 		</>
