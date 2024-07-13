@@ -39,13 +39,15 @@ const StepMasakan = ({ data }) => {
                       <p className="mb-2">{item.nama_langkah}</p>
                     </div>
                     <div className="scroll-bar-hideen -mx-4 mb-2 overflow-auto px-4">
-                      <button onClick={() => handleImageExpand(item.img)}>
-                        <img
-                          className="h-[128px] w-[160px] rounded-lg object-cover"
-                          src={`http://localhost:3000/${item.img_url}`}
-                          alt={item.img}
-                        />
-                      </button>
+                      {item.img && (
+                        <button onClick={() => handleImageExpand(item.img)}>
+                          <img
+                            className="h-[128px] w-[160px] rounded-lg object-cover"
+                            src={`http://localhost:3000/${item.img_url}`}
+                            alt={item.img}
+                          />
+                        </button>
+                      )}
                     </div>
                   </div>
                   {isImageExpanded && expandedImageUrl === item.img && (
