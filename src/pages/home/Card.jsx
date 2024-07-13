@@ -1,12 +1,33 @@
 import { Link } from "react-router-dom";
+import { useEffect, useRef } from 'react';
+import api from "../../services/api";
+const Card = ({ data,token }) => {
 
-const Card = ({ data }) => {
+	const ref = useRef(null);
+	
+	const addFavorite = async () => {
+    try {
+      const el = ref.current;
+	  console.log(token);
+      const response = await api.post(`/favorite/${el.id}`, null ,{
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+	  console.log(response, "favorite")
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
 	const localhost = 'http://localhost:3000'
 	return (
 		<>
-			<div className='relative'>
-				<button className='w-10 h-10 bg-orange-500 rounded-full flex absolute right-4 top-4 text-slate-50 cursor-pointer duration-500 hover:bg-orange-700 hover:text-slate-200 z-10'>
+			<div className='relative' ref={ref} id={`${data.id}`}>
+				<button
+				 onClick={addFavorite}
+				 className='w-10 h-10 bg-orange-500 rounded-full flex absolute right-4 top-4 text-slate-50 cursor-pointer duration-500 hover:bg-orange-700 hover:text-slate-200 z-10'>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						fill='none'

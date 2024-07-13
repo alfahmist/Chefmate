@@ -61,12 +61,10 @@ function index() {
 
   const [datas, setDatas] = useState(null);
   const [token, setToken] = useState([]);
-
-    
    
   useEffect(() => {
     setToken(localStorage.getItem("token"))
-
+    console.log(token);
     const fetchData = async () => {
       try {
         const response = await api.get(`/recipe/limit/4`);
@@ -79,8 +77,10 @@ function index() {
     };
 
     fetchData();
-  }, []);
+  }, [token]);
 
+
+  
   return (
     <MainLayout>
       <main className="bg-slate-100">
@@ -226,7 +226,7 @@ function index() {
             {datas ? datas.map((data, index) => {
               return (
                 // <Link key={index} to={`/detail/${data.id}`}>
-                  <Card data={data} key={index}  />
+                  <Card data={data} key={index} token={token}  />
                 // </Link>
               );
             }) : null}
