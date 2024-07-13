@@ -66,7 +66,7 @@ const Card = ({ data }) => {
 					</button>
 				</div>
 				<p className='text-slate-700 text-2xl font-bold hover:text-green-600 duration-500 cursor-pointer'>
-					{data.deskripsi ?? data.deskripsi_recipe ?? "deskripsi recipe"}
+					{data.judul ?? data.judul ?? ""}
 				</p>
 			</div>
 		</>
