@@ -15,6 +15,8 @@ const StepMasakan = ({ data }) => {
     setExpandedImageUrl("");
   };
 
+  const StepRecipe = data.langkahs;
+
   return (
     <section id="step">
       <div className="lg:container">
@@ -25,7 +27,7 @@ const StepMasakan = ({ data }) => {
 
           <div>
             <ol>
-              {data.map((item, index) => (
+              {StepRecipe.map((item, index) => (
                 <li className="mb-4 flex relative" key={index}>
                   <div className="mr-2 w-6">
                     <div className="h-6 w-6 rounded-full bg-slate-700 text-center font-semibold text-white">
@@ -34,28 +36,30 @@ const StepMasakan = ({ data }) => {
                   </div>
                   <div>
                     <div className="mb-2">
-                      <p className="mb-2">{item.judul}</p>
+                      <p className="mb-2">{item.nama_langkah}</p>
                     </div>
                     <div className="scroll-bar-hideen -mx-4 mb-2 overflow-auto px-4">
-                      <button onClick={() => handleImageExpand(item.img)}>
-                        <img
-                          className="h-[128px] w-[160px] rounded-lg object-cover"
-                          src={item.img}
-                          alt={index + 1}
-                        />
-                      </button>
+                      {item.img && (
+                        <button onClick={() => handleImageExpand(item.img)}>
+                          <img
+                            className="h-[128px] w-[160px] rounded-lg object-cover"
+                            src={`http://localhost:3000/${item.img_url}`}
+                            alt={item.img}
+                          />
+                        </button>
+                      )}
                     </div>
                   </div>
                   {isImageExpanded && expandedImageUrl === item.img && (
-                    <div className="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
+                    <div className="fixed top-0 left-0 w-full h-full p-4 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50">
                       <div className="relative">
                         <img
-                          src={item.img}
-                          alt={index + 1}
+                          src={`http://localhost:3000/${item.img_url}`}
+                          alt={item.img}
                           className="max-w-full max-h-full"
                         />
                         <button
-                          className="absolute top-0 right-0 mt-4 mr-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full"
+                          className="absolute top-8 right-0 mt-4 mr-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full"
                           onClick={handleCloseImage}
                         >
                           X

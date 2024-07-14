@@ -1,27 +1,50 @@
 /* eslint-disable react/prop-types */
-// import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import api from "../../services/api";
+
 import MainLayout from "../../layout/MainLayout";
 
-import data from "./data";
+// import data from "./data";
 
 import Judul from "./components/Judul";
 import Pembuka from "./components/Pembuka";
-import Favorite from "./components/Favorite";
+// import Favorite from "./components/Favorite";
 import Bahan from "./components/Bahan";
 import StepMasakan from "./components/StepMasakan";
 import Cooksnap from "./components/Cooksnap";
 import Komentar from "./components/Komentar";
-import Reaksi from "./components/Reaksi";
+// import Reaksi from "./components/Reaksi";
 import Aside from "./components/Aside";
 import ProfilPembuat from "./components/Profil-Pembuat";
 
 const Detail = () => {
-  // const { params } = useParams()
-  const dataDetail = data[0];
-  const detailCaraMembuat = dataDetail.detail["cara-membuat"];
-  const bahanBaku = dataDetail["bahan-bahan"][0]["bahan-baku"];
-  const bahanSaus = dataDetail["bahan-bahan"][1]["saus"];
-  const bahanSambal = dataDetail["bahan-bahan"][2]["sambal"];
+  const { params } = useParams();
+
+  const [data, setData] = useState(null);
+
+  // console.log(data);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get(`/recipe/${params}`);
+        setData(response.data.data[0]);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [params]);
+
+  if (!data) {
+    return (
+      <MainLayout>
+        <div className="text-center p-4">loading</div>;
+      </MainLayout>
+    );
+  }
 
   return (
     <MainLayout>
@@ -29,33 +52,20 @@ const Detail = () => {
         <div className="lg:flex lg:px-4 lg:max-w-[1020px] justify-center">
           {/* start content */}
           <div id="content" className="lg:w-3/5 flex-shrink-0 flex-grow">
-            <Judul data={dataDetail} />
-            <Pembuka />
+            <Judul data={data} />
+            <Pembuka data={data} />
 
             {/* bagian canro */}
-            <Favorite />
+            {/* <Favorite /> */}
 
-            <Bahan
-              data={dataDetail}
-              bahanBaku={bahanBaku}
-              bahanSaus={bahanSaus}
-              bahanSambal={bahanSambal}
-            />
+            <Bahan data={data} />
 
-            <StepMasakan data={detailCaraMembuat} />
-            <Reaksi />
+            <StepMasakan data={data} />
+            {/* <Reaksi recipeId={params} data={data} /> */}
+            <Cooksnap id_recipe={params} />
+            <Komentar id_recipe={params} />
 
-            {/* bagian mas canro */}
-            {/* start section cooksnap */}
-            <Cooksnap />
-            {/* end section cooksnap */}
-
-            {/* bagian mas canro */}
-            {/* start section komentar */}
-            <Komentar />
-            {/* end section komentar */}
-
-            <ProfilPembuat />
+            <ProfilPembuat data={data} />
           </div>
           {/* end content */}
 

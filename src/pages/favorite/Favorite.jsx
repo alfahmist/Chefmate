@@ -1,8 +1,66 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Link } from "react-router-dom";
-import img from "../../assets/img/ayam.jpg";
 import MainLayout from "../../layout/MainLayout";
 
+import { useEffect, useState } from "react";
+import api from "../../services/api";
+
 function index() {
+  const [data, setData] = useState(null);
+  const [token, setToken] = useState("");
+  console.log(data);
+  console.log(token);
+
+  const getToken = () => {
+    setToken(localStorage.getItem("token"));
+  };
+  useEffect(() => {
+    getToken();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await api.get(`/favorite`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        setData(response.data.data);
+
+        console.log(response.data.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, [token]);
+
+  const deleteFavorite = async (id) => {
+    try {
+      const response = await api.delete(`/favorite/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      alert(response.data.message);
+
+      setData(data.filter((item) => item.id !== id));
+    } catch (error) {
+      console.error("Error deleting favorite:", error);
+      alert("Error deleting favorite");
+    }
+  };
+
+  if (!data) {
+    return (
+      <MainLayout>
+        <div className="text-center p-4">loading</div>;
+      </MainLayout>
+    );
+  }
+
   return (
     <MainLayout>
       <main>
@@ -63,7 +121,7 @@ function index() {
         </section>
 
         <section className="container mx-auto px-6 pt-10 pb-4 flex flex-col items-start lg:px-20">
-          <div className="flex flex-col gap-8 mb-8 lg:flex-row justify-center ">
+          {/* <div className="flex flex-col gap-8 mb-8 lg:flex-row justify-center ">
             <div className=" relative flex flex-row justify-start gap-x-2 my-4">
               <button className=" border-orange-500 text-white rounded-xl flex p-1 bg-orange-500 border">
                 <span className="font-bold text-xl">Semua</span>
@@ -73,185 +131,50 @@ function index() {
                 <span className="font-bold text-xl">Resep</span>
               </button>
             </div>
-          </div>
+          </div> */}
 
           <div className="flex flex-col gap-8 mb-8 lg:flex-row justify-center">
-            <div className="relative">
-              <div className="w-full overflow-hidden rounded-2xl">
-                <img
-                  src={img}
-                  alt="ayam-geprek"
-                  className="cursor-pointer hover:scale-105 duration-500"
-                />
-              </div>
-              <div className="flex flex-row justify-start gap-x-2 my-4">
-                <button className="border-2 border-orange-500 text-orange-500 rounded-xl flex p-1 hover:text-white hover:bg-orange-500 duration-500 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
+            {data.map((item, index) => {
+              return (
+                <div className="relative w-[240px]" key={index}>
+                  <button
+                    className="w-10 h-10 bg-orange-500 rounded-full flex absolute right-4 top-4 text-slate-50 cursor-pointer duration-500 hover:bg-orange-700 hover:text-slate-200 z-10 items-center justify-center"
+                    onClick={() => deleteFavorite(item.id)}
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="font-bold">1 Jam</span>
-                </button>
-                <button className="border-2 border-orange-500 text-orange-500 rounded-xl flex p-1 hover:text-white hover:bg-orange-500 duration-500 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="font-bold">Sedang</span>
-                </button>
-              </div>
-              <p className="text-slate-700 text-2xl font-bold hover:text-green-600 duration-500 cursor-pointer">
-                Cara Membuat Ayam Geprek a la Rumahan, Pedas dan Renyah
-              </p>
-            </div>
-            <div className="relative">
-              <div className="w-full overflow-hidden rounded-2xl">
-                <img
-                  src={img}
-                  alt="ayam geprek"
-                  className="cursor-pointer hover:scale-105 duration-500"
-                />
-              </div>
-              <div className="flex flex-row justify-start gap-x-2 my-4">
-                <button className="border-2 border-orange-500 text-orange-500 rounded-xl flex p-1 hover:text-white hover:bg-orange-500 duration-500 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="font-bold">1 Jam</span>
-                </button>
-                <button className="border-2 border-orange-500 text-orange-500 rounded-xl flex p-1 hover:text-white hover:bg-orange-500 duration-500 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="font-bold">Sedang</span>
-                </button>
-              </div>
-              <p className="text-slate-700 text-2xl font-bold hover:text-green-600 duration-500 cursor-pointer">
-                Cara Membuat Ayam Geprek a la Rumahan, Pedas dan Renyah
-              </p>
-            </div>
-            <div className="relative">
-              <div className="w-full overflow-hidden rounded-2xl">
-                <img
-                  src={img}
-                  alt="ayam geprek"
-                  className="cursor-pointer hover:scale-105 duration-500"
-                />
-              </div>
-              <div className="flex flex-row justify-start gap-x-2 my-4">
-                <button className="border-2 border-orange-500 text-orange-500 rounded-xl flex p-1 hover:text-white hover:bg-orange-500 duration-500 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="font-bold">1 Jam</span>
-                </button>
-                <button className="border-2 border-orange-500 text-orange-500 rounded-xl flex p-1 hover:text-white hover:bg-orange-500 duration-500 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="font-bold">Sedang</span>
-                </button>
-              </div>
-              <p className="text-slate-700 text-2xl font-bold hover:text-green-600 duration-500 cursor-pointer">
-                Cara Membuat Ayam Geprek a la Rumahan, Pedas dan Renyah
-              </p>
-            </div>
-            <div className="relative">
-              <div className="w-full overflow-hidden rounded-2xl">
-                <img
-                  src={img}
-                  alt="ayam geprek"
-                  className="cursor-pointer hover:scale-105 duration-500"
-                />
-              </div>
-              <div className="flex flex-row justify-start gap-x-2 my-4">
-                <button className="border-2 border-orange-500 text-orange-500 rounded-xl flex p-1 hover:text-white hover:bg-orange-500 duration-500 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="font-bold">1 Jam</span>
-                </button>
-                <button className="border-2 border-orange-500 text-orange-500 rounded-xl flex p-1 hover:text-white hover:bg-orange-500 duration-500 cursor-pointer">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  <span className="font-bold">Sedang</span>
-                </button>
-              </div>
-              <p className="text-slate-700 text-2xl font-bold hover:text-green-600 duration-500 cursor-pointer">
-                Cara Membuat Ayam Geprek a la Rumahan, Pedas dan Renyah
-              </p>
-            </div>
+                    X
+                  </button>
+                  <div className="w-full overflow-hidden rounded-2xl h-64">
+                    <Link to={`/detail/${item.id_recipe}`}>
+                      <img
+                        src={`http://localhost:3000${item.foto_recipe_url}`}
+                        alt={data.judul}
+                        className="cursor-pointer hover:scale-105 duration-500 h-full w-full object-cover object-center "
+                      />
+                    </Link>
+                  </div>
+                  <div className="flex flex-row justify-start gap-x-2 my-4">
+                    <button className="border-2 border-orange-500 text-orange-500 rounded-xl flex p-1 hover:text-white hover:bg-orange-500 duration-500 cursor-pointer">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      <span className="font-bold">{item.durasi}</span>
+                    </button>
+                  </div>
+                  <p className="text-slate-700 text-xl font-bold hover:text-green-600 duration-500 cursor-pointer truncate">
+                    {item.judul}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </section>
       </main>

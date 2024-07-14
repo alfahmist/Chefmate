@@ -1,7 +1,18 @@
-import LocationIcon from "../../../assets/icons/location.svg";
-import PersonImg from "../../../assets/img/person_dummy.jpg";
+/* eslint-disable react/prop-types */
 
-const ProfilPembuat = () => {
+const ProfilPembuat = ({ data }) => {
+  const dataUser = data.users;
+
+  const dateObject = new Date(data.created_at);
+
+  // Mendapatkan komponen tanggal
+  const year = dateObject.getFullYear();
+  const month = dateObject.getMonth() + 1;
+  const day = dateObject.getDate();
+
+  // Format tanggal
+  const formattedDate = `${day}/${month}/${year}`;
+
   return (
     <section id="profil-pembuat">
       <div className="lg:container">
@@ -11,45 +22,46 @@ const ProfilPembuat = () => {
           </h2>
 
           <div id="author-profil">
-            <div className="mb-4 flex items-stretch gap-x-4">
+            <div className="mb-4 flex items-center gap-x-4">
               <a href="#">
                 <img
                   className="w-14 rounded-full md:w-24"
-                  src={PersonImg}
-                  alt="profil author"
+                  src={`http://localhost:3000/${dataUser.img_url}`}
+                  alt={dataUser.img}
                 />
               </a>
 
               <div>
                 {/* <!-- nama pembuat --> */}
                 <div>
-                  <span className="text-base font-semibold mr-1">sadam</span>
-                  <span className="text-sm text-slate-600">@sadammahendra</span>
+                  <span className="text-base font-semibold mr-1">
+                    {dataUser.name_user}
+                  </span>
+                  {/* <span className="text-sm text-slate-600">@sadammahendra</span> */}
                 </div>
                 {/* <!-- dibuat pada tanggal --> */}
-                <div className="text-sm text-slate-600">Pada 11 Maret 2024</div>
+                <div className="text-sm text-slate-600">
+                  Pada {formattedDate}
+                </div>
                 {/* <!-- location --> */}
-                <div className="flex items-center text-sm text-slate-600">
+                {/* <div className="flex items-center text-sm text-slate-600">
                   <img
                     className="h-[16px] w-[16px]"
                     src={LocationIcon}
                     alt="lokasi"
                   />
                   <span className="ml-2">jakarta Selatan</span>
-                </div>
+                </div> */}
                 {/* <!-- tombol ikuti --> */}
-                <div className="mt-2">
+                {/* <div className="mt-2">
                   <button className="rounded-lg bg-gray-800 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-gray-700 transition">
                     Ikuti
                   </button>
-                </div>
+                </div> */}
               </div>
             </div>
             <p className="text-base text-slate-600">
-              Awalnya saya coba-coba, akhirnya saya ketagihan untuk membuat
-              segala masakan yang ada, semoga resep yang saya buat bermanfaat
-              bagi kalian, jangan lupa follow ya agar tidak ketinggalan, terima
-              kasih.
+              {dataUser.description_user}
             </p>
           </div>
         </div>
