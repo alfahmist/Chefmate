@@ -63,7 +63,7 @@ function index() {
     console.log(token);
     const fetchData = async () => {
       try {
-        const response = await api.get(`/recipe/limit/8`);
+        const response = await api.get(`/recipe/limit/9`);
         setDatas(response.data.data);
         console.log("response");
         console.log(response.data.data);
