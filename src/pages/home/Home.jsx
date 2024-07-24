@@ -1,22 +1,22 @@
 /* eslint-disable react/prop-types */
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { Link } from "react-router-dom";
+import img12 from "../../assets/img/resep/ayam-kuah-kaldu.jpg";
+import img7 from "../../assets/img/resep/ayam.jpg";
+import img8 from "../../assets/img/resep/daging.jpg";
+import img2 from "../../assets/img/resep/Dessert.jpg";
+import img5 from "../../assets/img/resep/Makan-Malam.jpg";
+import img6 from "../../assets/img/resep/makan-siang.jpg";
+import img4 from "../../assets/img/resep/Masakan-Tradisional.jpg";
+import img3 from "../../assets/img/resep/Menu-Hari-raya.jpg";
+import img from "../../assets/img/resep/pindang-bandeng.jpg";
+import img11 from "../../assets/img/resep/sarapan.jpg";
+import img9 from "../../assets/img/resep/sayur.jpg";
+import img10 from "../../assets/img/resep/seafood.jpg";
 import MainLayout from "../../layout/MainLayout";
 import Card from "./Card";
 import { Slider } from "./Slider";
-import img from "../../assets/img/resep/pindang-bandeng.jpg";
-import img2 from "../../assets/img/resep/Dessert.jpg";
-import img3 from "../../assets/img/resep/Menu-Hari-raya.jpg";
-import img4 from "../../assets/img/resep/Masakan-Tradisional.jpg";
-import img5 from "../../assets/img/resep/Makan-Malam.jpg";
-import img6 from "../../assets/img/resep/makan-siang.jpg";
-import img7 from "../../assets/img/resep/ayam.jpg";
-import img8 from "../../assets/img/resep/daging.jpg";
-import img9 from "../../assets/img/resep/sayur.jpg";
-import img10 from "../../assets/img/resep/seafood.jpg";
-import img11 from "../../assets/img/resep/sarapan.jpg";
-import img12 from "../../assets/img/resep/ayam-kuah-kaldu.jpg";
 
 import api from "../../services/api";
 
@@ -54,23 +54,19 @@ import api from "../../services/api";
 //   },
 // ];
 
-
-
 function index() {
-
-
   const [datas, setDatas] = useState(null);
   const [token, setToken] = useState([]);
-   
+
   useEffect(() => {
-    setToken(localStorage.getItem("token"))
+    setToken(localStorage.getItem("token"));
     console.log(token);
     const fetchData = async () => {
       try {
-        const response = await api.get(`/recipe/limit/4`);
+        const response = await api.get(`/recipe/limit/8`);
         setDatas(response.data.data);
-        console.log("response")
-        console.log(response.data.data)
+        console.log("response");
+        console.log(response.data.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -79,8 +75,6 @@ function index() {
     fetchData();
   }, [token]);
 
-
-  
   return (
     <MainLayout>
       <main className="bg-slate-100">
@@ -212,7 +206,10 @@ function index() {
             {/* <button className="bg-blue-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-blue-600 mr-4">
               Lihat Resep Lainnya
             </button> */}
-            <Link to={`${!token ? '/login' : '/create-recipe'}`} className="bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600">
+            <Link
+              to={`${!token ? "/login" : "/create-recipe"}`}
+              className="bg-green-500 text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600"
+            >
               Unggah Resep Mu
             </Link>
           </div>
@@ -223,13 +220,15 @@ function index() {
             Resep Terbaru
           </h1>
           <div className="flex flex-col gap-8 mb-8 lg:flex-row justify-center">
-            {datas ? datas.map((data, index) => {
-              return (
-                // <Link key={index} to={`/detail/${data.id}`}>
-                  <Card data={data} key={index} token={token}  />
-                // </Link>
-              );
-            }) : null}
+            {datas
+              ? datas.map((data, index) => {
+                  return (
+                    // <Link key={index} to={`/detail/${data.id}`}>
+                    <Card data={data} key={index} token={token} />
+                    // </Link>
+                  );
+                })
+              : null}
           </div>
           {/* <a
             href="#"
